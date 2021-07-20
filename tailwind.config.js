@@ -9,7 +9,7 @@ module.exports = {
       xl: "1440px",
     },
     colors: {
-      bgColor: "#F9F8F3",
+      "bg-color": "#F9F8F3",
       primary: {
         100: "#ece6f9",
         300: "#B0A4EA",
@@ -36,9 +36,17 @@ module.exports = {
       sans: ["Poppins", "sans-serif"],
       serif: ["Lora", "serif"],
     },
+    fontSize: {
+      base: ["1rem", "150%"],
+      md: ["1.25rem", "140%"],
+      lg: ["1.5625rem", "120%"],
+      xl: ["1.95rem", "140%"],
+      "2xl": ["2.44rem", "120%"],
+      "3xl": ["3.05rem", "100%"],
+    },
     extend: {
       textColor: {
-        base: "#474455",
+        "base-color": "#474455",
         light: "#AAA7B9",
       },
     },
