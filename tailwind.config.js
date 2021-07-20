@@ -49,6 +49,9 @@ module.exports = {
         "base-color": "#474455",
         light: "#AAA7B9",
       },
+      outline: {
+        accent: "#388C9F solid 2px",
+      },
     },
   },
   variants: {
