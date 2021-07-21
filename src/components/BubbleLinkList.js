@@ -9,7 +9,7 @@ import { BubbleLink } from "./StyledLinks"
 
 const BubbleLinkList = ({ links }) => {
   const styledLinks = links.map(link => (
-    <BubbleLink key={link.text} to={link.to}>
+    <BubbleLink isActive={link.isActive} key={link.text} to={link.to}>
       {link.text}
     </BubbleLink>
   ))

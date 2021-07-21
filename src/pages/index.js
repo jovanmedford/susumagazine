@@ -26,7 +26,6 @@ const IndexPage = () => (
       />
     </Header>
     <BubbleLinkList
-      tw="mt-4 ml-8"
       links={[
         { to: "#", text: "Loans" },
         { to: "#", text: "Credit Cards" },
@@ -44,7 +43,7 @@ const IndexPage = () => (
       </p>
       <BubbleLinkList
         links={[
-          { to: "#", text: "Latest" },
+          { isActive: true, to: "#", text: "Latest" },
           { to: "#", text: "FSC Regulations" },
         ]}
       />
