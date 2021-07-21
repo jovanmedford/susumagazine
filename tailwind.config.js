@@ -53,6 +53,21 @@ module.exports = {
       outline: {
         accent: "#388C9F solid 2px",
       },
+      keyframes: {
+        "menu-slide-in": {
+          "0%": {
+            transform: "translateX(0px)",
+            transitionTimingFunction: "ease-in",
+          },
+          "100%": {
+            transform: "translateX(300px)",
+            transitionTimingFunction: "ease-out",
+          },
+        },
+      },
+      animation: {
+        "menu-slide-in": "menu-slide-in .5s 1",
+      },
     },
   },
   variants: {
