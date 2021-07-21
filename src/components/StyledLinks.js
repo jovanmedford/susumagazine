@@ -7,6 +7,8 @@ const BubbleLink = tw(Link)`
   hover:bg-primary-300
   focus-within:outline-accent 
   rounded-lg
+  whitespace-nowrap
+  mr-2
 `
 
 export { BubbleLink }
