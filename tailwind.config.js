@@ -48,6 +48,7 @@ module.exports = {
       textColor: {
         "base-color": "#474455",
         light: "#AAA7B9",
+        white: "#FFFFFF",
       },
       outline: {
         accent: "#388C9F solid 2px",
