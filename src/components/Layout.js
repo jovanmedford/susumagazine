@@ -1,6 +1,7 @@
 import React from "react"
 import { Global } from "@emotion/react"
 import tw, { css, GlobalStyles } from "twin.macro"
+import Header from "../components/Header"
 
 const customStyles = css`
   h1 {
@@ -23,6 +24,7 @@ const Layout = ({ children, ...rest }) => (
   <div {...rest}>
     <GlobalStyles />
     <Global styles={customStyles} />
+    <Header />
     {children}
   </div>
 )
