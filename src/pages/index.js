@@ -11,6 +11,10 @@ const Header = styled.div`
   ${tw`mt-4 mx-8 flex justify-between items-center`}
 `
 
+const HeroBanner = tw("div")`
+  mt-4 pt-8 px-8 pb-20 bg-secondary-700
+`
+
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
@@ -22,6 +26,7 @@ const IndexPage = () => (
       />
     </Header>
     <BubbleLinkList
+      tw="mt-4 ml-8"
       links={[
         { to: "#", text: "Loans" },
         { to: "#", text: "Credit Cards" },
@@ -31,6 +36,19 @@ const IndexPage = () => (
         { to: "#", text: "See All Articles" },
       ]}
     />
+    <HeroBanner>
+      <h1 tw="text-white">Let's talk about money</h1>
+      <p tw="text-white mt-2">
+        Stay up to date with the latest trends in Credit Union News and Personal
+        Finance.
+      </p>
+      <BubbleLinkList
+        links={[
+          { to: "#", text: "Latest" },
+          { to: "#", text: "FSC Regulations" },
+        ]}
+      />
+    </HeroBanner>
   </Layout>
 )
 
