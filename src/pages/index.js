@@ -5,6 +5,7 @@ import tw from "twin.macro"
 import BubbleLinkList from "../components/BubbleLinkList"
 import HeroImage from "../components/HeroImage"
 import BlogPostCardList from "../components/BlogPostCardList"
+import { Advertisement } from "../components/Advertisement"
 
 const BubbleLinksContainer = tw("div")`
   ml-8
@@ -65,6 +66,7 @@ const IndexPage = () => (
         ]}
       />
     </section>
+    <Advertisement />
   </Layout>
 )
 
