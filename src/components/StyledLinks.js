@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const BubbleLink = styled(Link)(({ isActive }) => [
   tw`text-primary-700 bg-primary-100 py-1 px-6
-  md:text-md
+  lg:text-md
   transition duration-200 ease-in
   hover:bg-primary-500
   hover:text-white
@@ -15,4 +15,11 @@ const BubbleLink = styled(Link)(({ isActive }) => [
   isActive && tw`bg-primary-700 text-white`,
 ])
 
-export { BubbleLink }
+const HeaderLink = tw(Link)`
+  text-primary-700
+  hover:text-primary-300
+  mr-4
+  lg:mr-6 lg:text-md
+`
+
+export { BubbleLink, HeaderLink }

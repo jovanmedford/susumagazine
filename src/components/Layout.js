@@ -19,6 +19,10 @@ const customStyles = css`
   body {
     ${tw`text-base-color bg-bg-color font-sans`}
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `
 const Layout = ({ children, ...rest }) => (
   <div {...rest}>
