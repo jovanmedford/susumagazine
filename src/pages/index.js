@@ -3,6 +3,7 @@ import Seo from "../components/seo"
 import Layout from "../components/Layout"
 import tw from "twin.macro"
 import BubbleLinkList from "../components/BubbleLinkList"
+import HeroImage from "../components/HeroImage"
 
 const BubbleLinksContainer = tw("div")`
   ml-8
@@ -45,6 +46,7 @@ const IndexPage = () => (
         ]}
       />
     </HeroBanner>
+    <HeroImage />
   </Layout>
 )
 
