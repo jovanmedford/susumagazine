@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import tw from "twin.macro"
 import BubbleLinkList from "../components/BubbleLinkList"
 import HeroImage from "../components/HeroImage"
+import { FlowerGraphSmall } from "../components/FlowerGraph"
 
 const BubbleLinksContainer = tw("div")`
   ml-8
@@ -47,6 +48,16 @@ const IndexPage = () => (
       />
     </HeroBanner>
     <HeroImage />
+    <section>
+      <h2 tw="text-center text-primary-700">Latest</h2>
+      <div tw="w-56 mt-8 mx-auto">
+        <FlowerGraphSmall />
+        <h3 tw="mt-2">Do You or Will You Have Enough Money Saved To Retire?</h3>
+        <p tw="mt-1">
+          6 min read / <span tw="text-primary-700">By Sonny Sood</span>
+        </p>
+      </div>
+    </section>
   </Layout>
 )
 
