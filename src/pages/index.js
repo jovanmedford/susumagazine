@@ -33,8 +33,8 @@ const IndexPage = () => (
       />
     </BubbleLinksContainer>
     <HeroBanner>
-      <h1 tw="text-white">Let's talk about money</h1>
-      <p tw="text-white mt-2">
+      <h1 tw="text-white">Let's Talk About Money</h1>
+      <p tw="text-white mt-2 md:text-md">
         Stay up to date with the latest trends in Credit Union News and Personal
         Finance.
       </p>
