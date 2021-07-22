@@ -2,6 +2,7 @@ import React from "react"
 import { Global } from "@emotion/react"
 import tw, { css, GlobalStyles } from "twin.macro"
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 const customStyles = css`
   h1 {
@@ -19,6 +20,11 @@ const customStyles = css`
   body {
     ${tw`text-base-color bg-bg-color font-sans`}
   }
+  .svg-inline--fa.fa-w-14 {
+    width: 2rem;
+    height: 2rem;
+    ${tw`hover:cursor-pointer`}
+  }
 
   ::-webkit-scrollbar {
     display: none;
@@ -30,6 +36,7 @@ const Layout = ({ children, ...rest }) => (
     <Global styles={customStyles} />
     <Header />
     {children}
+    <Footer />
   </div>
 )
 
