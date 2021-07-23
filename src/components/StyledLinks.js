@@ -22,4 +22,10 @@ const HeaderLink = tw(Link)`
   lg:mr-6 lg:text-md
 `
 
-export { BubbleLink, HeaderLink }
+const FooterLink = tw(Link)`
+  text-primary-100
+  hover:text-secondary-300
+  mt-2
+`
+
+export { BubbleLink, HeaderLink, FooterLink }
