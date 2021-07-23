@@ -6,7 +6,7 @@ import Footer from "../components/Footer"
 
 const customStyles = css`
   h1 {
-    ${tw`text-2xl md:text-3xl font-bold`}
+    ${tw`text-2xl xl:text-3xl font-bold`}
   }
 
   h2 {
@@ -14,7 +14,7 @@ const customStyles = css`
   }
 
   h3 {
-    ${tw`text-md md:text-lg`}
+    ${tw`text-md xl:text-lg`}
   }
 
   body {
