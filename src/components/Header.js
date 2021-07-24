@@ -4,6 +4,7 @@ import tw from "twin.macro"
 import Dropdownmenu from "./Dropdownmenu"
 import HeaderLinkList from "./HeaderLinkList"
 import mainNavLinks from "../data/mainNavLinks"
+import { Link } from "gatsby"
 
 const HeaderContainer = tw.div`
   mt-4 mx-8 flex justify-between items-center
@@ -13,7 +14,9 @@ const HeaderContainer = tw.div`
 console.log(mainNavLinks)
 const Header = () => (
   <HeaderContainer>
-    <img src={Logo} />
+    <Link to="/">
+      <img alt="Susu Logo" src={Logo} />
+    </Link>
     <HeaderLinkList links={mainNavLinks} />
     <Dropdownmenu />
   </HeaderContainer>
