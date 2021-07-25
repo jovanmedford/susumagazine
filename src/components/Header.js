@@ -3,8 +3,11 @@ import Logo from "../images/susu-website-logo.png"
 import tw from "twin.macro"
 import Dropdownmenu from "./Dropdownmenu"
 import HeaderLinkList from "./HeaderLinkList"
+import Search from "./search"
 import mainNavLinks from "../data/mainNavLinks"
 import { Link } from "gatsby"
+
+const searchIndices = [{ name: `Posts`, title: `Posts` }]
 
 const HeaderContainer = tw.div`
   mt-4 mx-8 flex justify-between items-center
@@ -18,7 +21,8 @@ const Header = () => (
       <img alt="Susu Logo" src={Logo} />
     </Link>
     <HeaderLinkList links={mainNavLinks} />
-    <Dropdownmenu />
+    <Dropdownmenu tw="md:hidden" />
+    <Search indices={searchIndices} tw="hidden md:block" />
   </HeaderContainer>
 )
 
