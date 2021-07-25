@@ -1,4 +1,5 @@
 import { Link } from "gatsby"
+import "twin.macro"
 import { default as React } from "react"
 import {
   connectStateResults,
@@ -21,24 +22,24 @@ const HitCount = connectStateResults(({ searchResults }) => {
 
 const PageHit = ({ hit }) => (
   <div>
-    <Link to={hit.slug}>
-      <h4>
+    <Link to={`/${hit.slug}`}>
+      <h4 tw="text-md font-bold text-primary-100">
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h4>
     </Link>
-    <Snippet attribute="excerpt" hit={hit} tagName="mark" />
+    <Snippet tw="text-white" attribute="excerpt" hit={hit} tagName="mark" />
   </div>
 )
 
 const HitsInIndex = ({ index }) => (
   <Index indexName={index.name}>
     <HitCount />
-    <Hits className="Hits" hitComponent={PageHit} />
+    <Hits hitComponent={PageHit} />
   </Index>
 )
 
-const SearchResult = ({ indices, className }) => (
-  <div className={className}>
+const SearchResult = ({ indices }) => (
+  <div tw="bg-primary-700 absolute inset-y-36 inset-x-0">
     {indices.map(index => (
       <HitsInIndex index={index} key={index.name} />
     ))}
