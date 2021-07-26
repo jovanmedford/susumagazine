@@ -4,7 +4,11 @@ import { InstantSearch } from "react-instantsearch-dom"
 import SearchBox from "./SearchBox"
 import SearchResult from "./SearchResults"
 import useClickOutside from "./useClickOutside"
-import "twin.macro"
+import { styled } from "twin.macro"
+
+const StyledSearchResult = styled(SearchResult)`
+  display: ${({ show }) => (show ? "block" : "none")};
+`
 
 export default function Search({ indices }) {
   const rootRef = createRef()
@@ -29,7 +33,7 @@ export default function Search({ indices }) {
         onSearchStateChange={({ query }) => setQuery(query)}
       >
         <SearchBox onFocus={() => setFocus(true)} hasFocus={hasFocus} />
-        <SearchResult
+        <StyledSearchResult
           show={query && query.length > 0 && hasFocus}
           indices={indices}
         />

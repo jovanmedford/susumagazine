@@ -1,5 +1,4 @@
 import { Link } from "gatsby"
-import "twin.macro"
 import { default as React } from "react"
 import {
   connectStateResults,
@@ -38,8 +37,8 @@ const HitsInIndex = ({ index }) => (
   </Index>
 )
 
-const SearchResult = ({ indices }) => (
-  <div tw="bg-primary-700 absolute inset-y-36 inset-x-0">
+const SearchResult = ({ indices, className }) => (
+  <div className={className}>
     {indices.map(index => (
       <HitsInIndex index={index} key={index.name} />
     ))}
