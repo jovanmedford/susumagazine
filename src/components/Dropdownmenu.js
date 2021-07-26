@@ -49,7 +49,7 @@ const Dropdownmenu = () => {
   const [isActive, setActive] = useState(false)
   const closeMenu = () => setActive(false)
   return (
-    <div>
+    <div tw="md:hidden">
       <FontAwesomeIcon
         onClick={() => setActive(true)}
         icon={faBars}

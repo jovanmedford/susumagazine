@@ -4,6 +4,7 @@ import { InstantSearch } from "react-instantsearch-dom"
 import SearchBox from "./SearchBox"
 import SearchResult from "./SearchResults"
 import useClickOutside from "./useClickOutside"
+import "twin.macro"
 
 export default function Search({ indices }) {
   const rootRef = createRef()
@@ -21,7 +22,7 @@ export default function Search({ indices }) {
   useClickOutside(rootRef, () => setFocus(false))
 
   return (
-    <div ref={rootRef}>
+    <div tw="hidden md:block" ref={rootRef}>
       <InstantSearch
         searchClient={searchClient}
         indexName={indices[0].name}

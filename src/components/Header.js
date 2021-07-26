@@ -21,8 +21,8 @@ const Header = () => (
       <img alt="Susu Logo" src={Logo} />
     </Link>
     <HeaderLinkList links={mainNavLinks} />
-    <Dropdownmenu tw="md:hidden" />
-    <Search indices={searchIndices} tw="hidden md:block" />
+    <Dropdownmenu />
+    <Search indices={searchIndices} />
   </HeaderContainer>
 )
 
