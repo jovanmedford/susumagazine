@@ -15,7 +15,6 @@ export default connectSearchBox(
         value={currentRefinement}
         onFocus={onFocus}
       />
-      <FontAwesomeIcon icon={faSearch} />
     </form>
   )
 )

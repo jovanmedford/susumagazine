@@ -4,10 +4,43 @@ import { InstantSearch } from "react-instantsearch-dom"
 import SearchBox from "./SearchBox"
 import SearchResult from "./SearchResults"
 import useClickOutside from "./useClickOutside"
-import { styled } from "twin.macro"
+import tw, { styled, css } from "twin.macro"
+
+const Popover = css`
+  ${tw`absolute mt-2 bg-primary-700 inset-x-0 p-8 z-10 text-white`}
+`
 
 const StyledSearchResult = styled(SearchResult)`
   display: ${({ show }) => (show ? "block" : "none")};
+  ${Popover}
+
+  .HitCount {
+    ${tw`text-md`}
+  }
+
+  mark {
+    ${tw`bg-primary-900 text-white p-0.5`}
+  }
+
+  .Hits {
+    h4 {
+      ${tw`text-md mt-8 mb-1 text-primary-100 font-bold
+           md:text-lg`}
+    }
+    span {
+      ${tw`mt-2`}
+    }
+  }
+
+  .PoweredBy {
+    ${tw`mt-2`}
+  }
+`
+const StyledSearchBox = styled(SearchBox)`
+  .SearchInput {
+    ${tw`w-full py-2 pl-2 mt-2 rounded-md shadow-md
+         md:m-0`}
+  }
 `
 
 export default function Search({ indices }) {
@@ -26,13 +59,13 @@ export default function Search({ indices }) {
   useClickOutside(rootRef, () => setFocus(false))
 
   return (
-    <div tw="hidden md:block" ref={rootRef}>
+    <div tw="md:w-1/3" ref={rootRef}>
       <InstantSearch
         searchClient={searchClient}
         indexName={indices[0].name}
         onSearchStateChange={({ query }) => setQuery(query)}
       >
-        <SearchBox onFocus={() => setFocus(true)} hasFocus={hasFocus} />
+        <StyledSearchBox onFocus={() => setFocus(true)} hasFocus={hasFocus} />
         <StyledSearchResult
           show={query && query.length > 0 && hasFocus}
           indices={indices}
