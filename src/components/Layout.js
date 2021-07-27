@@ -29,6 +29,10 @@ const customStyles = css`
   ::-webkit-scrollbar {
     display: none;
   }
+
+  ::placeholder {
+    ${tw`text-light`}
+  }
 `
 const Layout = ({ children, ...rest }) => (
   <div {...rest}>
