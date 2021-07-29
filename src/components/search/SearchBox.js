@@ -9,7 +9,7 @@ export default connectSearchBox(
     <form
       onSubmit={e => {
         e.preventDefault()
-        navigate(`/search/?q=${currentRefinement}`, {
+        navigate(`search/?q=${currentRefinement}`, {
           state: { currentRefinement },
         })
       }}
