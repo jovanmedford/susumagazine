@@ -2,7 +2,8 @@ import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/Layout"
 import tw, { css } from "twin.macro"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import retrieveImage from "../utils/retrieveImage"
 
 const blogPostStyles = css`
   ${tw`mt-5 mx-auto lg:mt-10`}
@@ -43,20 +44,10 @@ const blogPostStyles = css`
   }
 `
 
-function retieveImage(data) {
-  let image = ""
-  try {
-    image = getImage(data.wpPost.featuredImage.node.localFile)
-  } catch (e) {
-    console.log(e)
-  }
-  return image
-}
-
 const BlogPostTemplate = ({ data }) => {
   const title = data.wpPost.title
   const content = data.wpPost.content
-  const image = retieveImage(data)
+  const image = retrieveImage(data.wpPost)
   const firstName = data.wpPost.author.node.firstName
   const lastName = data.wpPost.author.node.lastName
   const authorImg = data.wpPost.author.node.avatar.url
