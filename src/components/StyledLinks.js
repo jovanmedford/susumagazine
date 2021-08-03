@@ -15,6 +15,13 @@ const BubbleLink = styled(Link)(({ isActive }) => [
   isActive && tw`bg-primary-700 text-white`,
 ])
 
+const MagazineLink = tw("a")`
+  px-8 py-1 block mt-2
+  text-md text-center text-primary-700
+  rounded-sm border-2 border-primary-700
+  hover:bg-primary-100 
+`
+
 const HeaderLink = tw(Link)`
   text-primary-700
   hover:text-primary-300
@@ -28,4 +35,4 @@ const FooterLink = tw(Link)`
   mt-2
 `
 
-export { BubbleLink, HeaderLink, FooterLink }
+export { BubbleLink, HeaderLink, MagazineLink, FooterLink }

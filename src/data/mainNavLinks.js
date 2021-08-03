@@ -1,7 +1,7 @@
 const mainNavigationLinks = [
-  { to: "#", text: "Magazine Library" },
+  { to: "/magazinelibrary", text: "Magazine Library" },
   { to: "#", text: "Write With Us" },
-  { to: "#", text: "Contact" },
+  { to: "/contact", text: "Contact" },
 ]
 
 export default mainNavigationLinks
