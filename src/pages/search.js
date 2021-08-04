@@ -41,7 +41,7 @@ export default function Search({ location }) {
 
 function Hit({ hit }) {
   return (
-    <div tw="border-l-2 pl-2 border-primary-700 max-w-md">
+    <div tw="border-l-2 pl-2 border-primary-700 max-w-md mb-8 md:mb-0">
       <Link to={`/${hit.slug}`}>
         <h3>
           <Highlight attribute="title" hit={hit} tagName="mark" />
