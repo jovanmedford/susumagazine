@@ -2,16 +2,15 @@ import React from "react"
 import { connectSearchBox } from "react-instantsearch-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
-import { navigate } from "gatsby"
+import { navigate } from "@reach/router"
 
 export default connectSearchBox(
-  ({ refine, currentRefinement, className, onFocus }) => (
+  ({ refine, currentRefinement, className, onFocus, closePopOver }) => (
     <form
       onSubmit={e => {
         e.preventDefault()
-        navigate(`search/?q=${currentRefinement}`, {
-          state: { currentRefinement },
-        })
+        navigate(`/search/?query=${currentRefinement}`)
+        closePopOver()
       }}
       className={className}
     >

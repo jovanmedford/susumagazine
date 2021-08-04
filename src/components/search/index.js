@@ -65,7 +65,11 @@ export default function Search({ indices }) {
         indexName={indices[0].name}
         onSearchStateChange={({ query }) => setQuery(query)}
       >
-        <StyledSearchBox onFocus={() => setFocus(true)} hasFocus={hasFocus} />
+        <StyledSearchBox
+          closePopOver={() => setFocus(false)}
+          onFocus={() => setFocus(true)}
+          hasFocus={hasFocus}
+        />
         <StyledSearchResult
           show={query && query.length > 0 && hasFocus}
           indices={indices}
