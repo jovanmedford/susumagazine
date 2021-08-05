@@ -1,6 +1,8 @@
 import React from "react"
 import { navigate } from "gatsby-link"
 import Layout from "../components/Layout"
+import PageHeading from "../components/PageHeading"
+import Tagline from "../components/Tagline"
 import tw from "twin.macro"
 
 const TextInput = tw("input")`
@@ -46,18 +48,10 @@ export default function Contact() {
 
   return (
     <Layout>
-      <h1
-        tw="text-lg text-center mt-8 font-normal
-              md:text-xl md:mt-12 md:w-full"
-      >
-        Contact Us
-      </h1>
-      <p
-        tw="w-9/12 mt-4 text-center max-w-xs mx-auto
-             md: mt-12"
-      >
+      <PageHeading>Contact Us</PageHeading>
+      <Tagline>
         For advertising inquries, conrtributions or any other questions.
-      </p>
+      </Tagline>
       <form
         tw="mt-8 mx-auto w-9/12 max-w-xs
             flex flex-col gap-4 md:mb-44"
