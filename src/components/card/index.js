@@ -30,7 +30,7 @@ const featuredStyles = css`
   }
 
   .ImageContainer {
-    ${tw`mt-8 max-w-xs md:w-1/2 md:max-w-none`}
+    ${tw`max-w-xs md:w-1/2 md:max-w-none`}
   }
 
   .Content {
