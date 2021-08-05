@@ -45,11 +45,11 @@ const Menu = ({ isActive, handleClick }) => {
   )
 }
 
-const Dropdownmenu = () => {
+const Dropdownmenu = ({ className }) => {
   const [isActive, setActive] = useState(false)
   const closeMenu = () => setActive(false)
   return (
-    <div tw="md:hidden">
+    <div className={className} tw="md:hidden">
       <FontAwesomeIcon
         onClick={() => setActive(true)}
         icon={faBars}

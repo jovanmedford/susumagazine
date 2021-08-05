@@ -2,17 +2,12 @@ import * as React from "react"
 import Seo from "../components/seo"
 import Layout from "../components/Layout"
 import tw from "twin.macro"
-import BubbleLinkList from "../components/BubbleLinkList"
 import HeroImage from "../components/HeroImage"
+import BubbleLinkList from "../components/BubbleLinkList"
 import BlogPostCardList from "../components/BlogPostCardList"
 import { Advertisement } from "../components/Advertisement"
 import { graphql } from "gatsby"
 
-const BubbleLinksContainer = tw("div")`
-  ml-8
-  lg:ml-20
-  xl:ml-28
-`
 const SectionHeading = tw("h2")`
 text-center font-bold text-primary-700
 mt-10 md:mt-8 md:text-left md:ml-8
@@ -34,18 +29,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Home" />
-      <BubbleLinksContainer>
-        <BubbleLinkList
-          links={[
-            { to: "#", text: "Loans" },
-            { to: "#", text: "Credit Cards" },
-            { to: "#", text: "Mortgages" },
-            { to: "#", text: "FSC" },
-            { to: "#", text: "BWUCCU" },
-            { to: "#", text: "See All Articles" },
-          ]}
-        />
-      </BubbleLinksContainer>
       <HeroBanner>
         <h1 tw="text-white">Let's Talk About Money</h1>
         <p tw="text-white mt-2 md:text-md md:w-2/3 lg:w-7/12">

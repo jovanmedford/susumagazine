@@ -3,6 +3,8 @@ import { Global } from "@emotion/react"
 import tw, { css, GlobalStyles } from "twin.macro"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import BubbleLinkList from "./BubbleLinkList"
+import searchLinks from "../data/searchLinks"
 
 const customStyles = css`
   h1 {
@@ -34,11 +36,21 @@ const customStyles = css`
     ${tw`text-light`}
   }
 `
+
+const BubbleLinksContainer = tw("div")`
+  ml-8
+  lg:ml-20
+  xl:ml-28
+`
+
 const Layout = ({ children, ...rest }) => (
   <div {...rest}>
     <GlobalStyles />
     <Global styles={customStyles} />
     <Header />
+    <BubbleLinksContainer>
+      <BubbleLinkList links={searchLinks} />
+    </BubbleLinksContainer>
     {children}
     <Footer />
   </div>

@@ -43,7 +43,7 @@ const StyledSearchBox = styled(SearchBox)`
   }
 `
 
-export default function Search({ indices }) {
+export default function Search({ indices, className }) {
   const rootRef = createRef()
   const [query, setQuery] = useState()
   const [hasFocus, setFocus] = useState(false)
@@ -59,7 +59,7 @@ export default function Search({ indices }) {
   useClickOutside(rootRef, () => setFocus(false))
 
   return (
-    <div tw="md:w-1/3" ref={rootRef}>
+    <div className={className} ref={rootRef}>
       <InstantSearch
         searchClient={searchClient}
         indexName={indices[0].name}
