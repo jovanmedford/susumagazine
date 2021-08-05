@@ -5,7 +5,6 @@ import tw from "twin.macro"
 import HeroImage from "../components/HeroImage"
 import BubbleLinkList from "../components/BubbleLinkList"
 import BlogPostCardList from "../components/BlogPostCardList"
-import { Advertisement } from "../components/Advertisement"
 import { graphql } from "gatsby"
 
 const SectionHeading = tw("h2")`
@@ -54,7 +53,6 @@ const IndexPage = ({ data }) => {
         <SectionHeading>Credit Union News</SectionHeading>
         <BlogPostCardList postDataList={creditUnionNewsPosts} />
       </section>
-      <Advertisement />
       <section>
         <SectionHeading>Learn</SectionHeading>
         <BlogPostCardList postDataList={learnPosts} />
