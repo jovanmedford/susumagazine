@@ -3,6 +3,7 @@ import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "gatsby"
+import mainNavigationLinks from "../data/mainNavLinks"
 import tw from "twin.macro"
 
 const Overlay = tw("div")`
@@ -22,7 +23,7 @@ const MenuItem = tw(Link)`
 `
 
 const Menu = ({ isActive, handleClick }) => {
-  const MenuLinks = links.map(link => (
+  const MenuLinks = mainNavigationLinks.map(link => (
     <MenuItem key={link.text} to={link.to}>
       {link.text}
     </MenuItem>
@@ -61,9 +62,3 @@ const Dropdownmenu = ({ className }) => {
 }
 
 export default Dropdownmenu
-
-const links = [
-  { to: "#", text: "Magazine Library" },
-  { to: "#", text: "Write With Us" },
-  { to: "#", text: "Contact" },
-]
