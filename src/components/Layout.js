@@ -22,6 +22,11 @@ const customStyles = css`
   body {
     ${tw`text-base-color bg-bg-color font-sans`}
   }
+
+  .content {
+    flex: 1 0 auto;
+  }
+
   .svg-inline--fa.fa-w-14 {
     width: 2rem;
     height: 2rem;
@@ -43,16 +48,24 @@ const BubbleLinksContainer = tw("div")`
   xl:ml-28
 `
 
+const PageWrapper = tw("div")`
+ flex flex-col min-h-screen
+`
+
 const Layout = ({ children, ...rest }) => (
   <div {...rest}>
     <GlobalStyles />
     <Global styles={customStyles} />
-    <Header />
-    <BubbleLinksContainer>
-      <BubbleLinkList links={searchLinks} />
-    </BubbleLinksContainer>
-    {children}
-    <Footer />
+    <PageWrapper>
+      <div className="content">
+        <Header />
+        <BubbleLinksContainer>
+          <BubbleLinkList links={searchLinks} />
+        </BubbleLinksContainer>
+        {children}
+      </div>
+      <Footer />
+    </PageWrapper>
   </div>
 )
 
