@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
         />
       </HeroBanner>
       <HeroImage />
-      <section tw="mt-12">
+      <section tw="mt-8">
         <SectionHeading>Featured</SectionHeading>
         <BlogPostCardList
           featuredPostData={featuredMain}
