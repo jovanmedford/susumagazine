@@ -5,8 +5,8 @@ export default function HeroImage() {
   return (
     <StaticImage
       tw="m-auto relative -top-12  
-          md:absolute md:m-0 md:right-4 md:top-72
-          lg:right-24 lg:top-72"
+          md:absolute md:m-0 md:right-4 md:top-52
+          lg:right-24"
       src="../images/money-tree.png"
       alt="A young plant growing in coins"
       placeholder="blurred"
