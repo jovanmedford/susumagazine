@@ -3,7 +3,7 @@ import tw, { styled } from "twin.macro"
 import Card from "./card/index"
 
 const BlogPostCardContainer = styled("div")`
-  ${tw`md:flex md:flex-row md:justify-between md:mt-4 md:mx-0`}
+  ${tw`md:flex md:flex-row md:justify-between md:mt-8 md:mx-0`}
 
   a {
     @media screen and (min-width: 768px) {

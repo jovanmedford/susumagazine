@@ -13,7 +13,7 @@ lg:ml-20
 `
 const HeroBanner = tw("div")`
   mt-4 pt-8 px-8 pb-20 bg-secondary-700
-  md:pt-12
+  md:mt-8 md:pt-12
   lg:mx-8 lg:py-16 lg:px-12 lg:rounded-lg
   xl:px-24
 `
@@ -35,7 +35,7 @@ const IndexPage = ({ data }) => {
         </p>
       </HeroBanner>
       <HeroImage />
-      <section tw="mt-8">
+      <section tw="md:mt-8">
         <SectionHeading>Featured</SectionHeading>
         <BlogPostCardList
           featuredPostData={featuredMain}

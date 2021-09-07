@@ -26,7 +26,7 @@ const featuredStyles = css`
   ${tw`md:flex md:justify-between md:w-full md:items-center`}
 
   h3 {
-    ${tw`md:text-lg`}
+    ${tw`md:text-md`}
   }
 
   .ImageContainer {
