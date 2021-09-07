@@ -39,8 +39,33 @@ const blogPostStyles = css`
     ${tw`text-primary-700 underline`}
   }
 
+  ul,
+  ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    font-family: Lora, serif;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: auto;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    ${tw`text-base lg:text-md`}
+  }
+
   strong {
     ${tw`font-bold`}
+  }
+
+  figcaption {
+    font-family: Lora, serif;
+    ${tw`text-center`}
   }
 `
 

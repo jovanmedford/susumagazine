@@ -3,8 +3,6 @@ import { Global } from "@emotion/react"
 import tw, { css, GlobalStyles } from "twin.macro"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import BubbleLinkList from "./BubbleLinkList"
-import searchLinks from "../data/searchLinks"
 
 const customStyles = css`
   h1 {
@@ -42,12 +40,6 @@ const customStyles = css`
   }
 `
 
-const BubbleLinksContainer = tw("div")`
-  ml-8
-  lg:ml-20
-  xl:ml-28
-`
-
 const PageWrapper = tw("div")`
  flex flex-col min-h-screen
 `
@@ -59,9 +51,6 @@ const Layout = ({ children, ...rest }) => (
     <PageWrapper>
       <div className="content">
         <Header />
-        <BubbleLinksContainer>
-          <BubbleLinkList links={searchLinks} />
-        </BubbleLinksContainer>
         {children}
       </div>
       <Footer />

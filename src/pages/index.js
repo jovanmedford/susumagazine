@@ -3,7 +3,6 @@ import Seo from "../components/seo"
 import Layout from "../components/Layout"
 import tw from "twin.macro"
 import HeroImage from "../components/HeroImage"
-import BubbleLinkList from "../components/BubbleLinkList"
 import BlogPostCardList from "../components/BlogPostCardList"
 import { graphql } from "gatsby"
 
@@ -34,12 +33,6 @@ const IndexPage = ({ data }) => {
           Stay up to date with the latest trends in Credit Union News and
           Personal Finance.
         </p>
-        <BubbleLinkList
-          links={[
-            { isActive: true, to: "#", text: "Latest" },
-            { to: "#", text: "FSC Regulations" },
-          ]}
-        />
       </HeroBanner>
       <HeroImage />
       <section tw="mt-8">
