@@ -112,6 +112,13 @@ const blogPostStyles = css`
     font-family: Lora, serif;
     ${tw`text-center`}
   }
+
+  blockquote {
+    ${tw`ml-4 border-primary-500`}
+    border-left: 2px solid;
+    padding: 1rem 0 0.5rem 1rem;
+    background: #eeebf5;
+  }
 `
 
 const bioStyle = css`
