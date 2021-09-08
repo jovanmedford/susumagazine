@@ -11,8 +11,8 @@ export default function HeroImage() {
       alt="A young plant growing in coins"
       placeholder="blurred"
       layout="fixed"
-      width={336}
-      height={252}
+      width={261}
+      height={193}
     />
   )
 }
