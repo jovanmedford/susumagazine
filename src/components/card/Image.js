@@ -11,7 +11,7 @@ export default function ({ src, className }) {
 }
 
 const ImageContainer = styled("div")`
-  ${tw`mt-8 md:mt-0`}
+  ${tw`mt-8 md:mt-0 w-full max-w-lg`}
 
-  ${props => props.featured && tw`max-w-xs md:w-1/2 md:max-w-none`}
+  ${props => props.featured && tw`md:w-1/2`}
 `

@@ -5,7 +5,7 @@ import tw from "twin.macro"
 import HeroImage from "../components/HeroImage"
 import BlogPostCardList from "../components/BlogPostCardList"
 import HomeSection from "../components/HomeSection"
-import Card from "../components/card"
+import FeaturedCard from "../components/card/FeaturedCard"
 import { graphql } from "gatsby"
 
 const SectionHeading = tw("h2")`
@@ -37,6 +37,9 @@ const IndexPage = ({ data }) => {
         </p>
       </HeroBanner>
       <HeroImage />
+      <HomeSection>
+        <FeaturedCard data={featuredMain} />
+      </HomeSection>
       <HomeSection title="Featured" tw="md:mt-8">
         <BlogPostCardList postDataList={featuredSecondary} />
       </HomeSection>

@@ -8,7 +8,7 @@ export default function Card({ data, className }) {
   const [title, firstName, lastName, image] = cardService(data)
   return (
     <LinkWrapper to={data.slug} className={className}>
-      <Image src={image} />
+      <Image featured src={image} />
       <ContentWrapper>
         <PostTitle>{title}</PostTitle>
         <ReadTime>5 mins /</ReadTime>
@@ -21,9 +21,12 @@ export default function Card({ data, className }) {
 }
 
 const LinkWrapper = styled(Link)`
-  ${props => props.featured && tw`flex`}
+  ${tw`md:flex w-full`}
 `
-const ContentWrapper = styled("div")``
+
+const ContentWrapper = styled("div")`
+  ${tw`md:ml-4 md:self-center`}
+`
 
 const PostTitle = styled("h3")`
   ${tw`text-base lg:text-md mt-2 font-semibold`}
