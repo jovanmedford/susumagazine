@@ -1,39 +1,39 @@
 import React from "react"
-import BaseCard from "./BaseCard"
-import tw, { css, styled } from "twin.macro"
+import Image from "./Image"
+import { Link } from "gatsby"
+import retrieveImage from "../../utils/retrieveImage"
+import tw, { styled } from "twin.macro"
 
-const StyledCard = styled(BaseCard)`
-  ${tw`max-w-xs md:max-w-none mt-8 md:mt-0`}
-
-  h3 {
-    ${tw`text-base lg:text-md mt-2 font-semibold`}
-  }
-  span {
-    ${tw`text-primary-700`}
-  }
-
-  .ImageContainer {
-    ${tw`mt-8 md:mt-0`}
-  }
-
-  ${({ featured }) => (featured ? featuredStyles : null)}
-`
-export default function Card({ data, featured }) {
-  return <StyledCard featured={featured} data={data} />
+export default function Card({ data, className }) {
+  const title = data.title
+  const firstName = data.author.node.firstName
+  const lastName = data.author.node.lastName
+  const image = retrieveImage(data)
+  return (
+    <LinkWrapper to={data.slug} className={className}>
+      <Image src={image} />
+      <ContentWrapper>
+        <PostTitle>{title}</PostTitle>
+        <ReadTime>5 mins /</ReadTime>
+        <AuthorName>
+          {firstName} {lastName}
+        </AuthorName>
+      </ContentWrapper>
+    </LinkWrapper>
+  )
 }
 
-const featuredStyles = css`
-  ${tw`md:flex md:justify-between md:w-full md:items-center`}
-
-  h3 {
-    ${tw`md:text-md`}
-  }
-
-  .ImageContainer {
-    ${tw`max-w-xs md:w-1/2 md:max-w-none`}
-  }
-
-  .Content {
-    ${tw`md:w-2/5`}
-  }
+const LinkWrapper = styled(Link)`
+  ${props => props.featured && tw`flex`}
 `
+const ContentWrapper = styled("div")``
+
+const PostTitle = styled("h3")`
+  ${tw`text-base lg:text-md mt-2 font-semibold`}
+`
+
+const AuthorName = styled("span")`
+  ${tw`text-primary-700`}
+`
+
+const ReadTime = styled("span")``

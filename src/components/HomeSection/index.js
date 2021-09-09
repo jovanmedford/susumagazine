@@ -3,19 +3,19 @@ import tw from "twin.macro"
 
 export default function ({ title, children }) {
   return (
-    <section>
+    <SectionContainer>
       <SectionHeading>{title}</SectionHeading>
       {children}
-    </section>
+    </SectionContainer>
   )
 }
 
 const SectionHeading = tw("h2")`
 text-center font-bold text-primary-700
-mt-10 md:mt-8 md:text-left md:ml-8
-lg:ml-20 
+mt-10 md:mt-8 md:text-left 
 `
 
 const SectionContainer = tw("section")`
   lg:w-2/3
+  mt-8 w-10/12 max-w-xs mx-auto mt-8 md:mx-8 md:max-w-none lg:ml-20
 `
