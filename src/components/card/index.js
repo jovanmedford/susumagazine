@@ -21,9 +21,11 @@ export default function Card({ data, className }) {
 }
 
 const LinkWrapper = styled(Link)`
-  ${props => props.featured && tw`flex`}
+  ${tw`md:flex md:flex-row-reverse md:items-center`}
 `
-const ContentWrapper = styled("div")``
+const ContentWrapper = styled("div")`
+  ${tw`md:w-2/3`}
+`
 
 const PostTitle = styled("h3")`
   ${tw`text-base lg:text-md mt-2 font-semibold`}
