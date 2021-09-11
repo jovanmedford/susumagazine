@@ -5,7 +5,7 @@ import cardService from "./cardService"
 import tw, { styled } from "twin.macro"
 
 export default function Card({ data, className }) {
-  const [title, firstName, lastName, image] = cardService(data)
+  const [title, firstName, lastName, , image] = cardService(data)
   return (
     <LinkWrapper to={data.slug} className={className}>
       <Image src={image} />
@@ -21,7 +21,7 @@ export default function Card({ data, className }) {
 }
 
 const LinkWrapper = styled(Link)`
-  ${tw`md:flex md:flex-row-reverse md:items-center`}
+  ${tw`md:flex md:flex-row-reverse md:items-center font-serif`}
 `
 const ContentWrapper = styled("div")`
   ${tw`md:w-2/3`}

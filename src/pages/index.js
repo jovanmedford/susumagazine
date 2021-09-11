@@ -82,6 +82,9 @@ export const query = graphql`
     nodes {
       title
       slug
+      additionalPostData {
+        excerpt
+      }
       categories {
         nodes {
           name
