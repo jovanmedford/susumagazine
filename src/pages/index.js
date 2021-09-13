@@ -1,11 +1,12 @@
 import * as React from "react"
 import Seo from "../components/seo"
 import Layout from "../components/Layout"
-import tw from "twin.macro"
+import tw, { styled } from "twin.macro"
 import HeroImage from "../components/HeroImage"
 import BlogPostCardList from "../components/BlogPostCardList"
 import HomeSection from "../components/HomeSection"
 import FeaturedCard from "../components/card/FeaturedCard"
+import BubbleLinkList from "../components/BubbleLinkList"
 import { graphql } from "gatsby"
 
 const SectionHeading = tw("h2")`
@@ -37,21 +38,49 @@ const IndexPage = ({ data }) => {
         </p>
       </HeroBanner>
       <HeroImage />
-      <HomeSection>
-        <FeaturedCard data={featuredMain} />
-      </HomeSection>
-      <HomeSection title="Featured" tw="md:mt-8">
-        <BlogPostCardList postDataList={featuredSecondary} />
-      </HomeSection>
-      <HomeSection title="Credit Union News">
-        <BlogPostCardList postDataList={creditUnionNewsPosts} />
-      </HomeSection>
-      <HomeSection title="Learn">
-        <BlogPostCardList postDataList={learnPosts} />
-      </HomeSection>
+      <Body>
+        <FeaturedCard data={featuredMain} tw="md:mt-8 lg:col-span-12" />
+        <MainContent>
+          <HomeSection title="Featured">
+            <BlogPostCardList postDataList={featuredSecondary} />
+          </HomeSection>
+          <HomeSection title="Credit Union News">
+            <BlogPostCardList postDataList={creditUnionNewsPosts} />
+          </HomeSection>
+          <HomeSection title="Learn">
+            <BlogPostCardList postDataList={learnPosts} />
+          </HomeSection>
+        </MainContent>
+
+        <SideContent tw="lg:col-start-9 lg:col-end-13">
+          <div tw="bg-secondary-700 rounded-sm w-full h-24">Ad</div>
+          <div>
+            <h2 tw="font-bold text-primary-700 md:mt-8 md:text-lg">
+              Suggested Topics
+            </h2>
+          </div>
+        </SideContent>
+      </Body>
     </Layout>
   )
 }
+
+const Body = styled("div")`
+  ${tw`w-10/12 max-w-xs mx-auto
+       md:mx-8 md:max-w-none md:mt-8
+       lg:ml-20`}
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 7fr 1fr 4fr;
+    grid-gap: 20px;
+  }
+`
+
+const MainContent = styled("div")`
+  ${tw`lg:col-span-7`}
+`
+
+const SideContent = styled("div")``
 
 export const query = graphql`
   query {
