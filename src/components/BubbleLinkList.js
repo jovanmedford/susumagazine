@@ -17,7 +17,6 @@ const BubbleLinkList = ({ links }) => {
 }
 
 const LinkList = tw("ul")`
-  mt-4 overflow-x-scroll flex
-`
+flex flex-wrap`
 
 export default BubbleLinkList

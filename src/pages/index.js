@@ -52,13 +52,14 @@ const IndexPage = ({ data }) => {
           </HomeSection>
         </MainContent>
 
-        <SideContent tw="lg:col-start-9 lg:col-end-13">
+        <SideContent>
           <div tw="bg-secondary-700 rounded-sm w-full h-24">Ad</div>
           <div>
             <h2 tw="font-bold text-primary-700 md:mt-8 md:text-lg">
               Suggested Topics
             </h2>
           </div>
+          <BubbleLinkList links={links} />
         </SideContent>
       </Body>
     </Layout>
@@ -71,8 +72,9 @@ const Body = styled("div")`
        lg:ml-20`}
   @media screen and (min-width: 1024px) {
     display: grid;
-    grid-template-columns: 7fr 1fr 4fr;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-gap: 20px;
+    column-gap: 20px;
   }
 `
 
@@ -80,7 +82,17 @@ const MainContent = styled("div")`
   ${tw`lg:col-span-7`}
 `
 
-const SideContent = styled("div")``
+const SideContent = styled("div")`
+  ${tw`w-full lg:col-start-9 lg:col-end-13`}
+`
+
+const links = [
+  { text: "SUSU", to: "/search/?query=SUSU" },
+  { text: "Covid", to: "/search/?query=Covid" },
+  { text: "Compliance", to: "/search/?query=Compliance" },
+  { text: "Credit Unions", to: "/search/?query=Credit+Unions" },
+  { text: "Finance", to: "/search/?query=Finance" },
+]
 
 export const query = graphql`
   query {

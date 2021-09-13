@@ -9,8 +9,9 @@ const BubbleLink = styled(Link)(({ isActive }) => [
   hover:text-white
   focus-within:outline-accent 
   rounded-lg
-  whitespace-nowrap
-  mr-2`,
+
+  lg:mt-2 lg:mr-2 lg:mb-1
+ `,
 
   isActive && tw`bg-primary-700 text-white`,
 ])
