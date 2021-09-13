@@ -16,6 +16,6 @@ mt-10 md:mt-8 md:text-left
 `
 
 const SectionContainer = tw("section")`
-  lg:w-2/3
+  lg:w-1/2
   mt-8 w-10/12 max-w-xs mx-auto mt-8 md:mx-8 md:max-w-none lg:ml-20
 `
