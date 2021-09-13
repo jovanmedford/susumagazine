@@ -8,6 +8,7 @@ import HomeSection from "../components/HomeSection"
 import FeaturedCard from "../components/card/FeaturedCard"
 import BubbleLinkList from "../components/BubbleLinkList"
 import { graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const SectionHeading = tw("h2")`
 text-center font-bold text-primary-700
@@ -52,6 +53,17 @@ const IndexPage = ({ data }) => {
           </HomeSection>
         </MainContent>
 
+        <svg width="0.5" tw="col-start-8 col-end-9" height="100%" tw="mx-auto">
+          <line
+            x1="0"
+            x2="0"
+            strokeWidth="0.5"
+            y1="0"
+            y2="100%"
+            stroke="#AAA7B9"
+          ></line>
+        </svg>
+
         <SideContent>
           <div tw="bg-secondary-700 rounded-sm w-full h-24">Ad</div>
           <div>
@@ -59,6 +71,9 @@ const IndexPage = ({ data }) => {
               Suggested Topics
             </h2>
           </div>
+          <section>
+            <StaticImage tw="rounded" />
+          </section>
           <BubbleLinkList links={links} />
         </SideContent>
       </Body>
