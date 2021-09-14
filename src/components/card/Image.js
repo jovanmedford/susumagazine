@@ -2,9 +2,9 @@ import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import tw, { styled } from "twin.macro"
 
-export default function ({ src, featured }) {
+export default function ({ src, isFullSize }) {
   return (
-    <ImageContainer featured={featured}>
+    <ImageContainer fullSize={isFullSize}>
       <GatsbyImage image={src} />
     </ImageContainer>
   )
@@ -12,5 +12,5 @@ export default function ({ src, featured }) {
 
 const ImageContainer = styled("div")`
   ${tw`mt-8 md:mt-0 w-full max-w-lg md:w-1/3`}
-  ${({ featured }) => featured && tw`md:w-full`}
+  ${({ fullSize }) => fullSize && tw`md:w-full`}
 `
