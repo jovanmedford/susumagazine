@@ -22,7 +22,8 @@ export default function BaseCard({
   hasAuthorImage,
   isReversed,
 }) {
-  const [title, firstName, lastName, , image] = cardService(data)
+  const [title, firstName, lastName, , image, authorImageSrc] =
+    cardService(data)
   return (
     <LinkWrapper
       isLarge={isLarge}
@@ -31,9 +32,10 @@ export default function BaseCard({
       className={className}
     >
       {!hasAuthorImage && <Image isFullSize={hasFullImage} src={image} />}
-      <ContentWrapper>
+      {hasAuthorImage && <img tw="rounded-full w-1/6" src={authorImageSrc} />}
+      <ContentWrapper reverse={isReversed}>
         <PostTitle>{title}</PostTitle>
-        <ReadTime>5 mins /</ReadTime>
+        <ReadTime>5 mins / </ReadTime>
         <AuthorName>
           {firstName} {lastName}
         </AuthorName>
@@ -43,13 +45,15 @@ export default function BaseCard({
 }
 
 const LinkWrapper = styled(Link)`
-  ${tw`md:flex md:items-center font-serif`}
+  ${tw`md:flex md:flex-row-reverse md:items-center font-serif`}
 
-  ${({ reverse }) => reverse && tw`md:flex-row-reverse`}
+  ${({ reverse }) => reverse && tw`md:flex-row`}
   ${({ isLarge }) => isLarge && tw`lg:col-span-12`}
 `
 const ContentWrapper = styled("div")`
   ${tw`md:w-2/3`}
+
+  ${({ reverse }) => reverse && tw`md:ml-4`}
 `
 
 const PostTitle = styled("h3")`

@@ -27,6 +27,7 @@ const IndexPage = ({ data }) => {
   const creditUnionNewsPosts = data.creditUnionNews.nodes
   const featuredMain = data.featuredMain.nodes[0]
   const featuredSecondary = data.featuredSecondary.nodes
+  const sidePosts = data.side.nodes
 
   return (
     <Layout>
@@ -75,6 +76,7 @@ const IndexPage = ({ data }) => {
             <StaticImage tw="rounded" />
           </section>
           <BubbleLinkList links={links} />
+          <BlogPostCardList postDataList={sidePosts} type="side" />
         </SideContent>
       </Body>
     </Layout>
@@ -132,6 +134,9 @@ export const query = graphql`
     learn: allWpPost(limit: 3, filter: { section: { name: { eq: "learn" } } }) {
       ...PreviewInformation
     }
+    side: allWpPost(limit: 3, filter: { section: { name: { eq: "side" } } }) {
+      ...PreviewInformation
+    }
   }
 
   fragment PreviewInformation on WpPostConnection {
@@ -150,6 +155,9 @@ export const query = graphql`
         node {
           firstName
           lastName
+          avatar {
+            url
+          }
         }
       }
       featuredImage {

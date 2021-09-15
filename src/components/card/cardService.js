@@ -7,5 +7,6 @@ export default function (data) {
   const lastName = data.author.node.lastName
   const excerpt = data.additionalPostData.excerpt
   const image = retrieveImage(data)
-  return [title, firstName, lastName, excerpt, image]
+  const authorImageSrc = data.author.node.avatar.url
+  return [title, firstName, lastName, excerpt, image, authorImageSrc]
 }

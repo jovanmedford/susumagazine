@@ -2,8 +2,10 @@ import React from "react"
 import tw, { styled } from "twin.macro"
 import Card from "./card/index"
 
-const BlogPostCardList = ({ postDataList }) => {
-  const BlogPostCards = postDataList.map(postData => <Card data={postData} />)
+const BlogPostCardList = ({ postDataList, type }) => {
+  const BlogPostCards = postDataList.map(postData => (
+    <Card data={postData} type={type} />
+  ))
   return <BlogPostCardContainer>{BlogPostCards}</BlogPostCardContainer>
 }
 
