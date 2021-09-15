@@ -85,13 +85,13 @@ const IndexPage = ({ data }) => {
 
 const Body = styled("div")`
   ${tw`w-10/12 max-w-xs mx-auto
-       md:mx-8 md:max-w-none md:mt-8
+       md:mx-8 md:max-w-none md:mt-8 lg:mt-12
        lg:ml-20`}
   @media screen and (min-width: 1024px) {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-gap: 20px;
     column-gap: 20px;
+    row-gap: 3rem;
   }
 `
 

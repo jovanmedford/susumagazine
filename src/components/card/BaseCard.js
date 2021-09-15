@@ -57,7 +57,7 @@ const ContentWrapper = styled("div")`
 `
 
 const PostTitle = styled("h3")`
-  ${tw`text-base lg:text-md mt-2 font-semibold`}
+  ${tw`text-base lg:text-md font-semibold`}
 `
 
 const AuthorName = styled("span")`
