@@ -17,6 +17,8 @@ const BubbleLinkList = ({ links, className }) => {
 }
 
 const LinkList = tw("ul")`
-flex flex-wrap`
+flex flex-wrap 
+justify-center md:justify-start
+`
 
 export default BubbleLinkList

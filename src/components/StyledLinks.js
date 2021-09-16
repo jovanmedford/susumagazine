@@ -11,6 +11,7 @@ const BubbleLink = styled(Link)(({ isActive }) => [
   rounded-lg
 
   lg:mt-2 lg:mr-2 lg:mb-1
+  mb-1 mr-1 md:mr-2 md:mb-0
  `,
 
   isActive && tw`bg-primary-700 text-white`,

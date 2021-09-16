@@ -32,8 +32,13 @@ export default function BaseCard({
       className={className}
     >
       {!hasAuthorImage && <Image isFullSize={hasFullImage} src={image} />}
-      {hasAuthorImage && <img tw="rounded-full w-1/6" src={authorImageSrc} />}
-      <ContentWrapper reverse={isReversed}>
+      {hasAuthorImage && (
+        <img
+          tw="mx-auto mb-2 lg:mx-0 rounded-full w-1/6 lg:mb-0"
+          src={authorImageSrc}
+        />
+      )}
+      <ContentWrapper reverse={isReversed} hasAuthorImage={hasAuthorImage}>
         <PostTitle>{title}</PostTitle>
         <ReadTime>5 mins / </ReadTime>
         <AuthorName>
@@ -54,6 +59,8 @@ const ContentWrapper = styled("div")`
   ${tw`md:w-2/3`}
 
   ${({ reverse }) => reverse && tw`md:ml-4`}
+  ${({ hasAuthorImage }) =>
+    hasAuthorImage && tw`text-center mb-8 md:text-left md:mb-0`}
 `
 
 const PostTitle = styled("h3")`

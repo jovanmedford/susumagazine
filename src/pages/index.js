@@ -54,7 +54,13 @@ const IndexPage = ({ data }) => {
           </HomeSection>
         </MainContent>
 
-        <svg width="2.5" tw="col-start-8 col-end-9" height="100%" tw="mx-auto">
+        <svg
+          tw="hidden lg:block"
+          width="2.5"
+          tw="col-start-8 col-end-9"
+          height="100%"
+          tw="mx-auto"
+        >
           <line
             x1="0"
             x2="0"
@@ -72,12 +78,12 @@ const IndexPage = ({ data }) => {
             src="../images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg"
           />
           <div>
-            <h2 tw="font-bold text-primary-700 md:mt-8 md:text-lg">
+            <h2 tw="font-bold text-primary-700 my-8 text-center md:text-left md:mt-8 md:text-lg">
               Suggested Topics
             </h2>
           </div>
           <BubbleLinkList tw="mt-2" links={links} />
-          <h2 tw="font-bold text-primary-700 md:mt-8 md:text-lg">
+          <h2 tw="font-bold text-primary-700 my-8 text-center md:text-left md:mt-8 md:text-lg">
             Editor's Picks
           </h2>
           <BlogPostCardList postDataList={sidePosts} type="side" />
