@@ -54,28 +54,32 @@ const IndexPage = ({ data }) => {
           </HomeSection>
         </MainContent>
 
-        <svg width="0.5" tw="col-start-8 col-end-9" height="100%" tw="mx-auto">
+        <svg width="2.5" tw="col-start-8 col-end-9" height="100%" tw="mx-auto">
           <line
             x1="0"
             x2="0"
-            strokeWidth="0.5"
+            strokeWidth="2.5"
             y1="0"
             y2="100%"
-            stroke="#AAA7B9"
+            stroke="#DEDDE4"
           ></line>
         </svg>
 
         <SideContent>
-          <div tw="bg-secondary-700 rounded-sm w-full h-24">Ad</div>
+          <StaticImage
+            tw="rounded-sm"
+            aspectRatio={2}
+            src="../images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg"
+          />
           <div>
             <h2 tw="font-bold text-primary-700 md:mt-8 md:text-lg">
               Suggested Topics
             </h2>
           </div>
-          <section>
-            <StaticImage tw="rounded" />
-          </section>
-          <BubbleLinkList links={links} />
+          <BubbleLinkList tw="mt-2" links={links} />
+          <h2 tw="font-bold text-primary-700 md:mt-8 md:text-lg">
+            Editor's Picks
+          </h2>
           <BlogPostCardList postDataList={sidePosts} type="side" />
         </SideContent>
       </Body>

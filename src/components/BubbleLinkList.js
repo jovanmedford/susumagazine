@@ -7,13 +7,13 @@ import { BubbleLink } from "./StyledLinks"
  * @param {*} param0
  */
 
-const BubbleLinkList = ({ links }) => {
+const BubbleLinkList = ({ links, className }) => {
   const styledLinks = links.map(link => (
     <BubbleLink isActive={link.isActive} key={link.text} to={link.to}>
       {link.text}
     </BubbleLink>
   ))
-  return <LinkList>{styledLinks}</LinkList>
+  return <LinkList className={className}>{styledLinks}</LinkList>
 }
 
 const LinkList = tw("ul")`
