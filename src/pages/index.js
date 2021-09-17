@@ -153,6 +153,7 @@ export const query = graphql`
     nodes {
       title
       slug
+      readingTime
       additionalPostData {
         excerpt
       }

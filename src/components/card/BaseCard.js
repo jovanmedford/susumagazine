@@ -3,6 +3,7 @@ import Image from "./Image"
 import { Link } from "gatsby"
 import cardService from "./cardService"
 import tw, { styled } from "twin.macro"
+import { faMinusSquare } from "@fortawesome/free-solid-svg-icons"
 /**
  *
  * @param {Object} data Contains the data for a blog post
@@ -22,8 +23,9 @@ export default function BaseCard({
   hasAuthorImage,
   isReversed,
 }) {
-  const [title, firstName, lastName, , image, authorImageSrc] =
+  const [title, firstName, lastName, , image, authorImageSrc, readingTime] =
     cardService(data)
+  const timeUnit = readingTime === "< 1" ? "min" : "mins"
   return (
     <LinkWrapper
       isLarge={isLarge}
@@ -40,7 +42,9 @@ export default function BaseCard({
       )}
       <ContentWrapper reverse={isReversed} hasAuthorImage={hasAuthorImage}>
         <PostTitle>{title}</PostTitle>
-        <ReadTime>5 mins / </ReadTime>
+        <ReadTime>
+          {readingTime} {timeUnit} /{" "}
+        </ReadTime>
         <AuthorName>
           {firstName} {lastName}
         </AuthorName>
