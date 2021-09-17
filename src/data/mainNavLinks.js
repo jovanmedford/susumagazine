@@ -1,6 +1,6 @@
 const mainNavigationLinks = [
   { to: "/magazinelibrary", text: "Magazine Library" },
-  { to: "#", text: "Write With Us" },
+  { to: "/about", text: "About Us" },
   { to: "/contact", text: "Contact" },
 ]
 

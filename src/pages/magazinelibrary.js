@@ -66,7 +66,7 @@ export const query = graphql`
           }
           localFile {
             childImageSharp {
-              gatsbyImageData(aspectRatio: 0.9, layout: FULL_WIDTH)
+              gatsbyImageData(aspectRatio: 0.717, layout: FULL_WIDTH)
             }
           }
         }

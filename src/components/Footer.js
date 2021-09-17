@@ -19,35 +19,18 @@ const Footer = () => {
     >
       <ListWrapper>
         <FooterLinkList
-          heading="Credit Unions"
-          links={[
-            { to: "#", text: "AGM" },
-            { to: "#", text: "FSC Regulations" },
-            { to: "#", text: "News" },
-          ]}
-        />
-        <FooterLinkList
-          hasMarginReset={true}
-          heading="Learn"
-          links={[
-            { to: "#", text: "Loans" },
-            { to: "#", text: "Mortgage" },
-            { to: "#", text: "Savings" },
-            { to: "#", text: "Budgeting" },
-          ]}
-        />
-        <FooterLinkList
           heading="Company"
           links={[
-            { to: "#", text: "Advertise" },
-            { to: "#", text: "Magazine Library" },
-            { to: "#", text: "Write With Us" },
-            { to: "#", text: "Contact" },
+            { to: "/about", text: "About Us" },
+            { to: "/magazinelibrary", text: "Magazine Library" },
+            { to: "/contact", text: "Contact" },
           ]}
         />
         <div tw="flex items-center">
           <FontAwesomeIcon tw="mr-2 text-white" icon={faFacebookSquare} />
-          <FontAwesomeIcon tw="text-white" icon={faInstagram} />
+          <a href="https://www.instagram.com/officialsusumagazine/">
+            <FontAwesomeIcon tw="text-white" icon={faInstagram} />
+          </a>
         </div>
       </ListWrapper>
       <span tw="mt-2 md:mt-4 block text-primary-100 text-center">

@@ -74,7 +74,7 @@ const IndexPage = ({ data }) => {
         <SideContent>
           <StaticImage
             tw="rounded-sm"
-            aspectRatio={2}
+            aspectRatio={1.2}
             src="../images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg"
           />
           <div>
@@ -115,7 +115,7 @@ const SideContent = styled("div")`
 
 const links = [
   { text: "SUSU", to: "/search/?query=SUSU" },
-  { text: "Covid", to: "/search/?query=Covid" },
+  { text: "FSC", to: "/search/?query=FSC" },
   { text: "Compliance", to: "/search/?query=Compliance" },
   { text: "Credit Unions", to: "/search/?query=Credit+Unions" },
   { text: "Finance", to: "/search/?query=Finance" },

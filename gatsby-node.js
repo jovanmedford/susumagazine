@@ -1,7 +1,7 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
-      allWpPost {
+      allWpPost(filter: { section: { name: { ne: "company" } } }) {
         nodes {
           id
           uri

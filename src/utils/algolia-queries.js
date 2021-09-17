@@ -5,6 +5,11 @@ const pageQuery = `{
       slug
       title
       excerpt
+      author {
+        node {
+          description
+        }
+      }
     }
   }
 }`
