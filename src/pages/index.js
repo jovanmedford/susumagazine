@@ -154,6 +154,7 @@ export const query = graphql`
       title
       slug
       readingTime
+      date(formatString: "MMM DD, YYYY")
       additionalPostData {
         excerpt
       }

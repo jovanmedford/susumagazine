@@ -23,8 +23,16 @@ export default function BaseCard({
   hasAuthorImage,
   isReversed,
 }) {
-  const [title, firstName, lastName, , image, authorImageSrc, readingTime] =
-    cardService(data)
+  const [
+    title,
+    firstName,
+    lastName,
+    ,
+    image,
+    authorImageSrc,
+    readingTime,
+    date,
+  ] = cardService(data)
   const timeUnit = readingTime === "< 1" ? "min" : "mins"
   return (
     <LinkWrapper
@@ -41,10 +49,10 @@ export default function BaseCard({
         />
       )}
       <ContentWrapper reverse={isReversed} hasAuthorImage={hasAuthorImage}>
+        <Date>
+          {date} | {readingTime} {timeUnit}
+        </Date>
         <PostTitle>{title}</PostTitle>
-        <ReadTime>
-          {readingTime} {timeUnit} /{" "}
-        </ReadTime>
         <AuthorName>
           {firstName} {lastName}
         </AuthorName>
@@ -60,7 +68,7 @@ const LinkWrapper = styled(Link)`
   ${({ isLarge }) => isLarge && tw`lg:col-span-12`}
 `
 const ContentWrapper = styled("div")`
-  ${tw`md:w-2/3`}
+  ${tw`md:w-2/3 flex flex-col`}
 
   ${({ reverse }) => reverse && tw`md:ml-4`}
   ${({ hasAuthorImage }) =>
@@ -68,11 +76,13 @@ const ContentWrapper = styled("div")`
 `
 
 const PostTitle = styled("h3")`
-  ${tw`text-base lg:text-md font-semibold`}
+  ${tw`text-base lg:text-md font-semibold order-1`}
 `
 
 const AuthorName = styled("span")`
-  ${tw`text-primary-700`}
+  ${tw`block order-1`}
 `
 
-const ReadTime = styled("span")``
+const Date = styled("span")`
+  ${tw`justify-self-end text-light order-last md:order-first`}
+`

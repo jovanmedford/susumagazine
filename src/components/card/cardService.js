@@ -9,6 +9,7 @@ export default function (data) {
   const image = retrieveImage(data)
   const authorImageSrc = data.author.node.avatar.url
   const readingTime = data.readingTime
+  const date = data.date
   return [
     title,
     firstName,
@@ -17,5 +18,6 @@ export default function (data) {
     image,
     authorImageSrc,
     readingTime,
+    date,
   ]
 }
