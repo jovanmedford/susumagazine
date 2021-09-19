@@ -16,5 +16,5 @@ md:text-left
 `
 
 const SectionContainer = tw("section")`
-  mb-12
+  mb-8 lg:mb-12
 `

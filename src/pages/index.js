@@ -46,11 +46,8 @@ const IndexPage = ({ data }) => {
           <HomeSection title="Featured">
             <BlogPostCardList postDataList={featuredSecondary} />
           </HomeSection>
-          <HomeSection title="Credit Union News">
+          <HomeSection title="Credit Union">
             <BlogPostCardList postDataList={creditUnionNewsPosts} />
-          </HomeSection>
-          <HomeSection title="Learn">
-            <BlogPostCardList postDataList={learnPosts} />
           </HomeSection>
         </MainContent>
 
@@ -72,13 +69,18 @@ const IndexPage = ({ data }) => {
         </svg>
 
         <SideContent>
-          <StaticImage
-            tw="rounded-sm"
-            aspectRatio={1.2}
-            src="../images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg"
-          />
+          <a href="https://school.thecaribbeanscholar.com/courses/set-theory">
+            <StaticImage
+              tw="rounded-sm max-w-md hidden lg:block"
+              aspectRatio={1.2}
+              src="../images/set-theory.png"
+            />
+            <span tw="text-center block tracking-widest text-light">
+              Advertisement
+            </span>
+          </a>
           <div>
-            <h2 tw="font-bold text-primary-700 my-8 text-center md:text-left md:mt-8 md:text-lg">
+            <h2 tw="font-bold text-primary-700 my-8 text-center md:text-left md:mt-0 md:mb-4 lg:mt-8 md:text-lg">
               Suggested Topics
             </h2>
           </div>
@@ -96,9 +98,11 @@ const IndexPage = ({ data }) => {
 const Body = styled("div")`
   ${tw`w-10/12 max-w-xs mx-auto
        md:mx-8 md:max-w-none md:mt-8 lg:mt-12
-       lg:ml-20`}
+       lg:ml-20
+       grid grid-cols-1
+       `}
+  row-gap: 2rem;
   @media screen and (min-width: 1024px) {
-    display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: 20px;
     row-gap: 3rem;

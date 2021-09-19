@@ -27,7 +27,9 @@ const Footer = () => {
           ]}
         />
         <div tw="flex items-center">
-          <FontAwesomeIcon tw="mr-2 text-white" icon={faFacebookSquare} />
+          <a href="https://www.facebook.com/officialsusumagazine/">
+            <FontAwesomeIcon tw="mr-2 text-white" icon={faFacebookSquare} />
+          </a>
           <a href="https://www.instagram.com/officialsusumagazine/">
             <FontAwesomeIcon tw="text-white" icon={faInstagram} />
           </a>
