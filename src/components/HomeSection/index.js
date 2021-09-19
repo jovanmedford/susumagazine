@@ -1,4 +1,4 @@
-import React from "React"
+import React from "react"
 import tw from "twin.macro"
 
 export default function ({ title, children }) {
@@ -16,5 +16,4 @@ md:text-left
 `
 
 const SectionContainer = tw("section")`
-  mb-8 lg:mb-12
-`
+  mb-8 lg:mb-12`
