@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="" />
+      <Seo />
       <HeroBanner>
         <h1 tw="text-white">Let's Talk About Money</h1>
         <p tw="text-white mt-2 md:text-md md:w-2/3 lg:w-7/12">
@@ -75,7 +75,7 @@ const IndexPage = ({ data }) => {
               aspectRatio={1.2}
               src="../images/set-theory.png"
             />
-            <span tw="text-center block tracking-widest text-light">
+            <span tw="hidden lg:block text-center block tracking-widest text-light">
               Advertisement
             </span>
           </a>

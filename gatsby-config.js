@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `SUSU Magazine | Personal Finance Tips and Credit Union News from right here in Barbados`,
     description: `Learn how you can make the most of your money with key insights on non-banking financial institutions.`,
-    author: `Jova Medford`,
+    author: `Jovan Medford`,
     siteUrl: `https://susumagazine.com/`,
   },
   plugins: [
