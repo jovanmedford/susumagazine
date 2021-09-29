@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo />
+      <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
       <HeroBanner>
         <h1 tw="text-white">Let's Talk About Money</h1>
         <p tw="text-white mt-2 md:text-md md:w-2/3 lg:w-7/12">

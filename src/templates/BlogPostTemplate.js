@@ -14,12 +14,15 @@ const BlogPostTemplate = ({ data }) => {
   const authorImg = data.wpPost.author.node.avatar.url
   const authorBio = data.wpPost.author.node.description
   const date = data.wpPost.date
+  const caption = data.wpPost.featuredImage.node.caption
+    ? data.wpPost.featuredImage.node.caption
+    : null
 
   return (
     <Layout>
       <section tw="mt-8 mx-auto md:flex md:w-10/12 max-w-2xl">
         <div tw="flex flex-col justify-center mx-auto w-11/12 max-w-xs md:w-6/12">
-          <span tw="block mt-4 text-primary-700 text-lg">Personal Finance</span>
+          <span tw="block mt-4 text-primary-700 text-lg">Article</span>
           <h1 tw="text-lg">{title}</h1>
           <div tw="flex mt-2">
             <img tw="w-14 h-14 mr-2 rounded-full" src={authorImg} />
@@ -33,6 +36,11 @@ const BlogPostTemplate = ({ data }) => {
         </div>
         <GatsbyImage tw="mt-4 rounded-lg mx-auto" image={image} />
       </section>
+      <div
+        css={containerStyle}
+        tw="font-bold font-sans"
+        dangerouslySetInnerHTML={{ __html: caption }}
+      ></div>
       <article
         css={blogPostStyles}
         dangerouslySetInnerHTML={{ __html: content }}
@@ -153,6 +161,7 @@ export const query = graphql`
       }
       featuredImage {
         node {
+          caption
           localFile {
             childImageSharp {
               gatsbyImageData(
