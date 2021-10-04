@@ -14,10 +14,8 @@ const BlogPostTemplate = ({ data }) => {
   const authorImg = data.wpPost.author.node.avatar.url
   const authorBio = data.wpPost.author.node.description
   const date = data.wpPost.date
-  const caption = data.wpPost.featuredImage.node.caption
-    ? data.wpPost.featuredImage.node.caption
-    : null
-
+  const caption =
+    data.wpPost.featuredImage && data.wpPost.featuredImage.node.caption
   return (
     <Layout>
       <section tw="mt-8 mx-auto md:flex md:w-10/12 max-w-2xl">
@@ -147,7 +145,7 @@ export const query = graphql`
     wpPost(id: { eq: $id }) {
       id
       title
-      date(formatString: "MMMM DD, YYYY")
+      date(formatString: "MMM DD, YYYY")
       content
       author {
         node {
