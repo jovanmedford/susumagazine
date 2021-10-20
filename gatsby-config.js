@@ -10,6 +10,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-TCH8MK8",
+        includeInDevelopment: false,
+      },
+    },
     { resolve: `gatsby-plugin-emotion` },
     {
       resolve: `gatsby-source-filesystem`,
