@@ -14,13 +14,19 @@ const BlogPostTemplate = ({ data }) => {
   const authorImg = data.wpPost.author.node.avatar.url
   const authorBio = data.wpPost.author.node.description
   const date = data.wpPost.date
+  const category =
+    data.wpPost.categories &&
+    (data.wpPost.categories.nodes[0].name === "Uncategorized"
+      ? "Article"
+      : data.wpPost.categories.nodes[0].name)
+  console.log(data)
   const caption =
     data.wpPost.featuredImage && data.wpPost.featuredImage.node.caption
   return (
     <Layout>
       <section tw="mt-8 mx-auto md:flex md:w-10/12 max-w-2xl">
         <div tw="flex flex-col justify-center mx-auto w-11/12 max-w-xs md:w-6/12">
-          <span tw="block mt-4 text-primary-700 text-lg">Article</span>
+          <span tw="block mt-4 text-primary-700 text-lg">{category}</span>
           <h1 tw="text-lg">{title}</h1>
           <div tw="flex mt-2">
             <img tw="w-14 h-14 mr-2 rounded-full" src={authorImg} />
@@ -147,6 +153,11 @@ export const query = graphql`
       title
       date(formatString: "MMM DD, YYYY")
       content
+      categories {
+        nodes {
+          name
+        }
+      }
       author {
         node {
           firstName
