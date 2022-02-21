@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import tw, { css } from "twin.macro"
 import { GatsbyImage } from "gatsby-plugin-image"
 import retrieveImage from "../utils/retrieveImage"
+import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data }) => {
   const title = data.wpPost.title
@@ -19,11 +20,11 @@ const BlogPostTemplate = ({ data }) => {
     (data.wpPost.categories.nodes[0].name === "Uncategorized"
       ? "Article"
       : data.wpPost.categories.nodes[0].name)
-  console.log(data)
   const caption =
     data.wpPost.featuredImage && data.wpPost.featuredImage.node.caption
   return (
     <Layout>
+      <SEO title={title} image={image} />
       <section tw="mt-8 mx-auto md:flex md:w-10/12 max-w-2xl">
         <div tw="flex flex-col justify-center mx-auto w-11/12 max-w-xs md:w-6/12">
           <span tw="block mt-4 text-primary-700 text-lg">{category}</span>
