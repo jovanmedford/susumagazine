@@ -18,7 +18,6 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
       }
     `
   )
-
   const metaDescription = description || site.siteMetadata.description
   const image =
     metaImage && metaImage.src
