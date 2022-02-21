@@ -26,7 +26,7 @@ const BlogPostTemplate = ({ data }) => {
     data.wpPost.featuredImage && data.wpPost.featuredImage.node.caption
   return (
     <Layout>
-      <SEO title={title} image={imageSrc} />
+      <SEO title={title} image={{ src: imageSrc, height: 1200, width: 630 }} />
       <section tw="mt-8 mx-auto md:flex md:w-10/12 max-w-2xl">
         <div tw="flex flex-col justify-center mx-auto w-11/12 max-w-xs md:w-6/12">
           <span tw="block mt-4 text-primary-700 text-lg">{category}</span>
