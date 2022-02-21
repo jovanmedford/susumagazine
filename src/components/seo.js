@@ -12,7 +12,6 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
             title
             description
             author
-            keywords
             siteUrl
           }
         }
@@ -48,10 +47,6 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
         {
           name: `description`,
           content: metaDescription,
-        },
-        {
-          name: "keywords",
-          content: site.siteMetadata.keywords.join(","),
         },
         {
           property: `og:title`,
