@@ -1,4 +1,6 @@
 import * as React from "react"
+import "@fontsource/lora"
+import "@fontsource/lora/700.css"
 import Seo from "../components/seo"
 import Layout from "../components/Layout"
 import tw, { styled } from "twin.macro"
@@ -10,18 +12,6 @@ import BubbleLinkList from "../components/BubbleLinkList"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-const SectionHeading = tw("h2")`
-text-center font-bold text-primary-700
-mt-10 md:mt-8 md:text-left md:ml-8
-lg:ml-20 
-`
-const HeroBanner = tw("div")`
-  mt-4 pt-8 px-8 pb-20 bg-secondary-700
-  md:mt-8 md:pt-12
-  lg:mx-8 lg:py-16 lg:px-12 lg:rounded-lg
-  xl:px-24
-`
-
 const IndexPage = ({ data }) => {
   const learnPosts = data.learn.nodes
   const creditUnionNewsPosts = data.creditUnionNews.nodes
@@ -32,14 +22,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
-      <HeroBanner>
-        <h1 tw="text-white">SUSU 2021 is here!</h1>
-        <p tw="text-white mt-2 md:text-md md:w-2/3 lg:w-8/12">
-          We're excited to bring you the latest from within the movement. Click
-          the picture to read all the content from our new edition.
-        </p>
-      </HeroBanner>
-      <HeroImage />
       <Body>
         <FeaturedCard data={featuredMain} tw="md:mt-8 lg:col-span-12" />
         <MainContent>
@@ -95,8 +77,20 @@ const IndexPage = ({ data }) => {
   )
 }
 
+const SectionHeading = tw("h2")`
+text-center font-bold text-primary-700
+mt-10 md:mt-8 md:text-left md:ml-8
+lg:ml-20 
+`
+const HeroBanner = tw("div")`
+  mt-4 pt-8 px-8 pb-20 bg-secondary-700
+  md:mt-8 md:pt-12
+  lg:mx-8 lg:py-16 lg:px-12 lg:rounded-lg
+  xl:px-24
+`
+
 const Body = styled("div")`
-  ${tw`w-10/12 max-w-xs mx-auto
+  ${tw`w-11/12 max-w-sm mx-auto
        md:mx-8 md:max-w-none md:mt-8 lg:mt-12
        lg:ml-20
        grid grid-cols-1

@@ -21,13 +21,14 @@ export default function BaseCard({
   isLarge,
   hasFullImage,
   hasAuthorImage,
-  isReversed,
+  hasUnderline,
+  isReversed
 }) {
   const [
     title,
     firstName,
     lastName,
-    ,
+    excerpt,
     image,
     authorImageSrc,
     readingTime,
@@ -41,21 +42,21 @@ export default function BaseCard({
       to={data.slug}
       className={className}
     >
-      {!hasAuthorImage && <Image isFullSize={hasFullImage} src={image} />}
-      {hasAuthorImage && (
-        <img
-          tw="mx-auto mb-2 lg:mx-0 rounded-full w-1/6 lg:mb-0"
-          src={authorImageSrc}
-        />
-      )}
+      <Image isFullSize={hasFullImage} src={image} />
       <ContentWrapper reverse={isReversed} hasAuthorImage={hasAuthorImage}>
-        <Date>
+        {/* <Date>
           {date} | {readingTime} {timeUnit}
-        </Date>
+        </Date> */}
         <PostTitle>{title}</PostTitle>
-        <AuthorName>
-          {firstName} {lastName}
-        </AuthorName>
+        {hasUnderline && <Divider />}
+        <Excerpt>{excerpt}</Excerpt>
+        <AuthorInfo>
+            <img
+              tw="mr-2 lg:mx-0 rounded-full w-1/6 lg:mb-0"
+              src={authorImageSrc}
+            />
+          By {firstName} {lastName}
+        </AuthorInfo>
       </ContentWrapper>
     </LinkWrapper>
   )
@@ -76,11 +77,22 @@ const ContentWrapper = styled("div")`
 `
 
 const PostTitle = styled("h3")`
-  ${tw`text-base lg:text-md font-semibold order-1`}
+  ${tw`text-lg 
+       mt-2
+       lg:text-md 
+       font-bold order-1`}
 `
 
-const AuthorName = styled("span")`
-  ${tw`block order-1`}
+const AuthorInfo = styled("span")`
+  ${tw`flex items-center order-1`}
+`
+const Divider = styled("hr")`
+  ${tw`mt-2 block border-2 border-primary-100 order-1`
+    }
+`
+
+const Excerpt = styled("p")`
+  ${tw`my-2 order-1`}
 `
 
 const Date = styled("span")`
