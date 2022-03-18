@@ -1,9 +1,9 @@
 import React from "react"
 import tw from "twin.macro"
 
-export default function ({ title, children }) {
+export default function ({ title, className, children }) {
   return (
-    <SectionContainer>
+    <SectionContainer className={className}>
       <SectionHeading>{title}</SectionHeading>
       {children}
     </SectionContainer>

@@ -18,7 +18,10 @@ import { faMinusSquare } from "@fortawesome/free-solid-svg-icons"
 export default function BaseCard({
   data,
   className,
+  hasLargeTitle,
+  flexDirection,
   isLarge,
+  showExcerpt,
   hasFullImage,
   hasAuthorImage,
   hasUnderline,
@@ -38,6 +41,7 @@ export default function BaseCard({
   return (
     <LinkWrapper
       isLarge={isLarge}
+      flexDirection={flexDirection}
       reverse={isReversed}
       to={data.slug}
       className={className}
@@ -47,9 +51,9 @@ export default function BaseCard({
         {/* <Date>
           {date} | {readingTime} {timeUnit}
         </Date> */}
-        <PostTitle>{title}</PostTitle>
+        <PostTitle hasLargeTitle={hasLargeTitle}>{title}</PostTitle>
         {hasUnderline && <Divider />}
-        <Excerpt>{excerpt}</Excerpt>
+        {showExcerpt && <Excerpt>{excerpt}</Excerpt>}
         <AuthorInfo>
             <img
               tw="mr-2 lg:mx-0 rounded-full w-1/6 lg:mb-0"
@@ -63,24 +67,28 @@ export default function BaseCard({
 }
 
 const LinkWrapper = styled(Link)`
-  ${tw`md:flex md:flex-row-reverse md:items-center font-serif`}
-
-  ${({ reverse }) => reverse && tw`md:flex-row`}
+  ${tw`mt-8 flex md:items-center font-serif`}
+  ${({flexDirection}) => flexDirection === "column" ? tw`flex-col` : tw`flex-row-reverse`}
   ${({ isLarge }) => isLarge && tw`lg:col-span-12`}
 `
 const ContentWrapper = styled("div")`
-  ${tw`md:w-2/3 flex flex-col`}
-
+  ${tw`w-full md:w-2/3 flex flex-col`}
   ${({ reverse }) => reverse && tw`md:ml-4`}
   ${({ hasAuthorImage }) =>
     hasAuthorImage && tw`text-center mb-8 md:text-left md:mb-0`}
 `
 
 const PostTitle = styled("h3")`
-  ${tw`text-lg 
-       mt-2
-       lg:text-md 
-       font-bold order-1`}
+  ${({hasLargeTitle}) => hasLargeTitle ? tw`text-lg` : 
+  tw`text-md`}
+  ${tw` mt-2 lg:text-lg font-bold order-1`}
+
+  ${({hasLargeTitle}) => !hasLargeTitle &&
+  `overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;`}
 `
 
 const AuthorInfo = styled("span")`
@@ -98,3 +106,7 @@ const Excerpt = styled("p")`
 const Date = styled("span")`
   ${tw`justify-self-end text-light order-last md:order-first`}
 `
+
+BaseCard.defaultProps = {
+  flexDirection: "row"
+}

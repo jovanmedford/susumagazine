@@ -9,6 +9,7 @@ import BlogPostCardList from "../components/BlogPostCardList"
 import HomeSection from "../components/HomeSection"
 import FeaturedCard from "../components/card/FeaturedCard"
 import BubbleLinkList from "../components/BubbleLinkList"
+import MajorSection from "../components/sections/MajorSection"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -22,23 +23,26 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
+      <MajorSection>
+          <FeaturedCard data={featuredMain} tw="col-span-1 md:mt-8" />
+          <HomeSection title="Featured" tw="md:col-span-2">
+             <BlogPostCardList postDataList={featuredSecondary} />
+          </HomeSection>
+      </MajorSection>
       <Body>
-        <FeaturedCard data={featuredMain} tw="md:mt-8 lg:col-span-12" />
-        <MainContent>
+        {/* <MainContent>
           <HomeSection title="Featured">
-            <BlogPostCardList postDataList={featuredSecondary} />
+             <BlogPostCardList postDataList={featuredSecondary} />
           </HomeSection>
           <HomeSection title="Credit Union">
             <BlogPostCardList postDataList={creditUnionNewsPosts} />
           </HomeSection>
-        </MainContent>
+        </MainContent> */}
 
         <svg
-          tw="hidden lg:block"
-          width="2.5"
-          tw="col-start-8 col-end-9"
+          tw="hidden lg:block mx-auto col-start-8 col-end-9"
+          width="2.5rem"
           height="100%"
-          tw="mx-auto"
         >
           <line
             x1="0"
