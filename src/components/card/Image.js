@@ -12,6 +12,6 @@ export default function ({ src, isFullSize }) {
 
 const ImageContainer = styled("div")`
   max-width: 8rem;
-  ${tw`md:mt-0 w-full md:max-w-lg md:w-1/3`}
-  ${({ fullSize }) => fullSize && tw` max-w-none w-full`}
+  ${tw`md:mt-0 w-full`}
+  ${({ fullSize }) => fullSize ? tw` max-w-none md:w-full` : tw` md:max-w-none w-1/3`}
 `

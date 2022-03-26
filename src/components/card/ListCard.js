@@ -1,14 +1,12 @@
 import React from "react"
 import BaseCard from "./BaseCard"
 
-export default function ({ data,className }) {
+export default function ({ data, className }) {
   return <BaseCard
             data={data} 
             isLarge 
-            hasLargeTitle
-            hasFullImage 
-            hasUnderline
-            showExcerpt
+            hideImage 
+            hideAuthorImage
             className={className}
             flexDirection="column"
              />

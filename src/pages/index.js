@@ -24,9 +24,9 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
       <MajorSection>
-          <FeaturedCard data={featuredMain} tw="col-span-1 md:mt-8" />
-          <HomeSection title="Featured" tw="md:col-span-2">
-             <BlogPostCardList postDataList={featuredSecondary} />
+          <FeaturedCard data={featuredMain} tw="col-span-1 md:col-start-1 md:col-end-2 md:mr-7 lg:mr-9" />
+          <HomeSection title="Editor's Picks" tw="col-span-1 md:col-start-2 md:col-end-3">
+             <BlogPostCardList postDataList={sidePosts} type="list"/>
           </HomeSection>
       </MajorSection>
       <Body>

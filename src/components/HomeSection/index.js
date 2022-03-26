@@ -11,9 +11,9 @@ export default function ({ title, className, children }) {
 }
 
 const SectionHeading = tw("h2")`
-text-center font-bold text-primary-700
+text-center font-bold text-primary-700 md:text-lg lg:text-xl
 md:text-left 
 `
 
 const SectionContainer = tw("section")`
-  mb-8 lg:mb-12`
+  mb-3 lg:mb-12`

@@ -10,7 +10,7 @@ const BlogPostCardList = ({ postDataList, type }) => {
 }
 
 const BlogPostCardContainer = styled("div")`
-  ${tw`md:flex md:flex-col md:justify-between md:mt-4 md:mx-0`}
+  ${tw`md:flex md:flex-col md:justify-between md:mx-0`}
   gap: 1rem;
 `
 

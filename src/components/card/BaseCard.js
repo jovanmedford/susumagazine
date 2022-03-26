@@ -22,6 +22,8 @@ export default function BaseCard({
   flexDirection,
   isLarge,
   showExcerpt,
+  hideImage,
+  hideAuthorImage,
   hasFullImage,
   hasAuthorImage,
   hasUnderline,
@@ -46,7 +48,7 @@ export default function BaseCard({
       to={data.slug}
       className={className}
     >
-      <Image isFullSize={hasFullImage} src={image} />
+      {!hideImage && <Image isFullSize={hasFullImage} src={image} />}
       <ContentWrapper reverse={isReversed} hasAuthorImage={hasAuthorImage}>
         {/* <Date>
           {date} | {readingTime} {timeUnit}
@@ -55,11 +57,11 @@ export default function BaseCard({
         {hasUnderline && <Divider />}
         {showExcerpt && <Excerpt>{excerpt}</Excerpt>}
         <AuthorInfo>
-            <img
-              tw="mr-2 lg:mx-0 rounded-full w-1/6 lg:mb-0"
+            {!hideAuthorImage && <img
+              tw="mr-2 lg:mr-2 rounded-full w-10 lg:mb-0"
               src={authorImageSrc}
-            />
-          By {firstName} {lastName}
+            />}
+          By <span tw="text-primary-700 whitespace-pre"> {firstName} {lastName}</span>
         </AuthorInfo>
       </ContentWrapper>
     </LinkWrapper>
@@ -67,21 +69,21 @@ export default function BaseCard({
 }
 
 const LinkWrapper = styled(Link)`
-  ${tw`mt-8 flex md:items-center font-serif`}
+  ${tw`flex md:items-center font-serif`}
   ${({flexDirection}) => flexDirection === "column" ? tw`flex-col` : tw`flex-row-reverse`}
-  ${({ isLarge }) => isLarge && tw`lg:col-span-12`}
+  ${({ isLarge }) => isLarge && "w-full" }
 `
 const ContentWrapper = styled("div")`
-  ${tw`w-full md:w-2/3 flex flex-col`}
+  ${tw`w-full flex flex-col`}
   ${({ reverse }) => reverse && tw`md:ml-4`}
   ${({ hasAuthorImage }) =>
     hasAuthorImage && tw`text-center mb-8 md:text-left md:mb-0`}
 `
 
 const PostTitle = styled("h3")`
-  ${({hasLargeTitle}) => hasLargeTitle ? tw`text-lg` : 
+  ${({hasLargeTitle}) => hasLargeTitle ? tw`text-lg lg:text-xl` : 
   tw`text-md`}
-  ${tw` mt-2 lg:text-lg font-bold order-1`}
+  ${tw` mt-2 font-bold order-1`}
 
   ${({hasLargeTitle}) => !hasLargeTitle &&
   `overflow: hidden;
