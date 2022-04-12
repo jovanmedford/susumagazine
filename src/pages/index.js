@@ -10,6 +10,7 @@ import HomeSection from "../components/HomeSection"
 import FeaturedCard from "../components/card/FeaturedCard"
 import BubbleLinkList from "../components/BubbleLinkList"
 import MajorSection from "../components/sections/MajorSection"
+import InstitutionSection from "../components/sections/InstitutionSection"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -17,27 +18,29 @@ const IndexPage = ({ data }) => {
   const learnPosts = data.learn.nodes
   const creditUnionNewsPosts = data.creditUnionNews.nodes
   const featuredMain = data.featuredMain.nodes[0]
+  const featuredCreditUnion= data.featuredCreditUnion.nodes[0]
   const featuredSecondary = data.featuredSecondary.nodes
   const sidePosts = data.side.nodes
+  const institutions = data.institutions.nodes
 
   return (
     <Layout>
       <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
       <MajorSection>
           <FeaturedCard data={featuredMain} tw="col-span-1 md:col-start-1 md:col-end-2 md:mr-7 lg:mr-9" />
-          <HomeSection title="Editor's Picks" tw="col-span-1 md:col-start-2 md:col-end-3">
+          <HomeSection hasFullHeight title="Editor's Picks" tw="col-span-1 md:col-start-2 md:col-end-3">
              <BlogPostCardList postDataList={sidePosts} type="list"/>
           </HomeSection>
       </MajorSection>
       <Body>
-        {/* <MainContent>
+        <MainContent>
           <HomeSection title="Featured">
              <BlogPostCardList postDataList={featuredSecondary} />
           </HomeSection>
-          <HomeSection title="Credit Union">
-            <BlogPostCardList postDataList={creditUnionNewsPosts} />
-          </HomeSection>
-        </MainContent> */}
+          <div tw="h-40 mt-10 bg-accent-300">
+            <HeroImage />
+          </div>
+        </MainContent>
 
         <svg
           tw="hidden lg:block mx-auto col-start-8 col-end-9"
@@ -70,13 +73,19 @@ const IndexPage = ({ data }) => {
               Suggested Topics
             </h2>
           </div>
-          <BubbleLinkList tw="mt-2" links={links} />
-          <h2 tw="font-bold text-primary-700 my-8 text-center md:text-left md:mt-8 md:text-lg">
-            Editor's Picks
-          </h2>
-          <BlogPostCardList postDataList={sidePosts} type="side" />
+        <BubbleLinkList tw="mt-2" links={links} />
         </SideContent>
       </Body>
+      {institutions ? <InstitutionSection institutions={institutions} /> : null }
+      <MajorSection tw="md:mt-12 lg:mt-20">
+          <HomeSection hasFullHeight title="Credit Union News" tw="col-span-1 md:col-start-1 md:col-end-2">
+             <BlogPostCardList postDataList={creditUnionNewsPosts} type="list"/>
+          </HomeSection>
+          <FeaturedCard data={featuredCreditUnion} tw="col-span-1 md:col-start-2 md:col-end-3 md:ml-7 lg:ml-9" />
+      </MajorSection>
+      <HomeSection tw="mt-4 mx-8 lg:mx-20 xl:mx-28" title="More Stories">
+            <BlogPostCardList postDataList={learnPosts} />
+      </HomeSection>
     </Layout>
   )
 }
@@ -94,8 +103,8 @@ const HeroBanner = tw("div")`
 `
 
 const Body = styled("div")`
-  ${tw`w-11/12 max-w-sm mx-auto
-       md:mx-8 md:max-w-none md:mt-8 lg:mt-12
+  ${tw`w-11/12 mx-auto
+       md:mx-8 md:max-w-none md:mt-12 lg:mt-20
        lg:ml-20
        grid grid-cols-1
        `}
@@ -131,6 +140,12 @@ export const query = graphql`
     ) {
       ...PreviewInformation
     }
+    featuredCreditUnion: allWpPost(
+      limit: 1
+      filter: { section: { name: { eq: "featuredCreditUnion" } } }
+    ) {
+      ...PreviewInformation
+    }
     featuredSecondary: allWpPost(
       limit: 3
       filter: { section: { name: { eq: "featuredSecondary" } } }
@@ -146,9 +161,17 @@ export const query = graphql`
     learn: allWpPost(limit: 3, filter: { section: { name: { eq: "learn" } } }) {
       ...PreviewInformation
     }
-    side: allWpPost(limit: 3, filter: { section: { name: { eq: "side" } } }) {
+    side: allWpPost(limit: 4, filter: { section: { name: { eq: "side" } } }) {
       ...PreviewInformation
     }
+    institutions: allWpUser(filter: {custom: {isinstitution: {eq: true}}}) {
+      nodes {
+        firstName
+        avatar {
+          url
+        }
+      }
+    }  
   }
 
   fragment PreviewInformation on WpPostConnection {

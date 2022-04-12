@@ -6,7 +6,6 @@ export default function ({ data, className }) {
             data={data} 
             isLarge 
             hideImage 
-            hideAuthorImage
             className={className}
             flexDirection="column"
              />

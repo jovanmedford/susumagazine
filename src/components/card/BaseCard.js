@@ -82,8 +82,8 @@ const ContentWrapper = styled("div")`
 
 const PostTitle = styled("h3")`
   ${({hasLargeTitle}) => hasLargeTitle ? tw`text-lg lg:text-xl` : 
-  tw`text-md`}
-  ${tw` mt-2 font-bold order-1`}
+  tw`text-md md:text-lg`}
+  ${tw` mt-2 mb-3 font-bold order-1`}
 
   ${({hasLargeTitle}) => !hasLargeTitle &&
   `overflow: hidden;
