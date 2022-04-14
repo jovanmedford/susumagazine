@@ -9,6 +9,7 @@ import FeaturedCard from "../components/card/FeaturedCard"
 import BubbleLinkList from "../components/BubbleLinkList"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import GoogleAd from "../components/adsense/GoogleAd"
 
 const SectionHeading = tw("h2")`
 text-center font-bold text-primary-700
