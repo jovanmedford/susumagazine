@@ -11,6 +11,7 @@ import FeaturedCard from "../components/card/FeaturedCard"
 import BubbleLinkList from "../components/BubbleLinkList"
 import MajorSection from "../components/sections/MajorSection"
 import InstitutionSection from "../components/sections/InstitutionSection"
+import Heading from "../components/sections/Heading"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -28,13 +29,14 @@ const IndexPage = ({ data }) => {
       <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
       <MajorSection>
           <FeaturedCard data={featuredMain} tw="col-span-1 md:col-start-1 md:col-end-2 md:mr-7 lg:mr-9" />
-          <HomeSection hasFullHeight title="Editor's Picks" tw="col-span-1 md:col-start-2 md:col-end-3">
+          <HomeSection hasFullHeight tw="col-span-1 md:col-start-2 md:col-end-3">
              <BlogPostCardList postDataList={sidePosts} type="list"/>
           </HomeSection>
       </MajorSection>
       <Body>
         <MainContent>
-          <HomeSection title="Featured">
+          <Heading>Featured</Heading>
+          <HomeSection>
              <BlogPostCardList postDataList={featuredSecondary} />
           </HomeSection>
           <div tw="h-40 mt-10 bg-accent-300">
@@ -64,12 +66,12 @@ const IndexPage = ({ data }) => {
               aspectRatio={1.2}
               src="../images/set-theory.png"
             />
-            <span tw="hidden lg:block text-center block tracking-widest text-light">
+            <span tw="hidden lg:block text-center tracking-widest text-light">
               Advertisement
             </span>
           </a>
           <div>
-            <h2 tw="font-bold text-primary-700 my-8 text-center md:text-left md:mt-0 md:mb-4 lg:mt-8 md:text-lg">
+            <h2 tw="font-bold text-lg text-primary-700 mb-4 mt-8 text-left lg:mt-8 md:text-lg">
               Suggested Topics
             </h2>
           </div>
@@ -78,33 +80,22 @@ const IndexPage = ({ data }) => {
       </Body>
       {institutions ? <InstitutionSection institutions={institutions} /> : null }
       <MajorSection tw="md:mt-12 lg:mt-20">
-          <HomeSection hasFullHeight title="Credit Union News" tw="col-span-1 md:col-start-1 md:col-end-2">
+          <Heading>Credit Union News</Heading>
+          <HomeSection hasFullHeight tw="col-span-1 md:col-start-1 md:col-end-2">
              <BlogPostCardList postDataList={creditUnionNewsPosts} type="list"/>
           </HomeSection>
-          <FeaturedCard data={featuredCreditUnion} tw="col-span-1 md:col-start-2 md:col-end-3 md:ml-7 lg:ml-9" />
+          <FeaturedCard data={featuredCreditUnion} tw="hidden md:block col-span-1 md:col-start-2 md:col-end-3 md:ml-7 lg:ml-9" />
       </MajorSection>
-      <HomeSection tw="mt-4 mx-8 lg:mx-20 xl:mx-28" title="More Stories">
+      <HomeSection tw=" mx-4 md:mx-8 lg:mx-20 xl:mx-28 md:my-12 lg:my-16" title="More Stories">
             <BlogPostCardList postDataList={learnPosts} />
       </HomeSection>
     </Layout>
   )
 }
 
-const SectionHeading = tw("h2")`
-text-center font-bold text-primary-700
-mt-10 md:mt-8 md:text-left md:ml-8
-lg:ml-20 
-`
-const HeroBanner = tw("div")`
-  mt-4 pt-8 px-8 pb-20 bg-secondary-700
-  md:mt-8 md:pt-12
-  lg:mx-8 lg:py-16 lg:px-12 lg:rounded-lg
-  xl:px-24
-`
-
 const Body = styled("div")`
   ${tw`w-11/12 mx-auto
-       md:mx-8 md:max-w-none md:mt-12 lg:mt-20
+       md:mx-8 md:max-w-none md:mt-12
        lg:ml-20
        grid grid-cols-1
        `}

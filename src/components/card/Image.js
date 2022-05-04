@@ -5,13 +5,18 @@ import tw, { styled } from "twin.macro"
 export default function ({ src, isFullSize }) {
   return (
     <ImageContainer fullSize={isFullSize}>
-      <GatsbyImage image={src} />
+      <ImageSubContainer>
+         <GatsbyImage image={src} />
+      </ImageSubContainer>
     </ImageContainer>
   )
 }
 
 const ImageContainer = styled("div")`
-  max-width: 8rem;
-  ${tw`md:mt-0 w-full`}
+  max-width: 8rem; 
+  ${tw`md:mt-0 w-full relative`}
   ${({ fullSize }) => fullSize ? tw` max-w-none md:w-full` : tw` md:max-w-none w-1/3`}
 `
+ const ImageSubContainer = styled("div")`
+  ${tw``}
+ `

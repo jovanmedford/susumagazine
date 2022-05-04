@@ -69,7 +69,7 @@ export default function BaseCard({
 }
 
 const LinkWrapper = styled(Link)`
-  ${tw`flex md:items-center font-serif`}
+  ${tw`flex md:items-center font-serif mb-4`}
   ${({flexDirection}) => flexDirection === "column" ? tw`flex-col` : tw`flex-row-reverse`}
   ${({ isLarge }) => isLarge && "w-full" }
 `
@@ -83,7 +83,7 @@ const ContentWrapper = styled("div")`
 const PostTitle = styled("h3")`
   ${({hasLargeTitle}) => hasLargeTitle ? tw`text-lg lg:text-xl` : 
   tw`text-md md:text-lg`}
-  ${tw` mt-2 mb-3 font-bold order-1`}
+  ${tw`md:mt-2 mb-2 font-bold order-1 hover:underline`}
 
   ${({hasLargeTitle}) => !hasLargeTitle &&
   `overflow: hidden;
@@ -102,7 +102,7 @@ const Divider = styled("hr")`
 `
 
 const Excerpt = styled("p")`
-  ${tw`my-2 order-1`}
+  ${tw`my-2 order-1 lg:text-md`}
 `
 
 const Date = styled("span")`

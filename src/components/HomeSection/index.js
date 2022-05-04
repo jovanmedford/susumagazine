@@ -4,7 +4,7 @@ import tw, { styled } from "twin.macro"
 export default function ({ title, className, children, hasFullHeight }) {
   return (
     <SectionContainer hasFullHeight={hasFullHeight} className={className}>
-      <SectionHeading>{title}</SectionHeading>
+      {title && <SectionHeading>{title}</SectionHeading>}
       {children}
     </SectionContainer>
   )
@@ -16,5 +16,5 @@ const SectionHeading = styled("h2")`
 `
 
 const SectionContainer = styled("section")`
-  ${tw`my-8 md:m-0`}
+  ${tw``}
 `
