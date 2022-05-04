@@ -86,7 +86,7 @@ const IndexPage = ({ data }) => {
           </HomeSection>
           <FeaturedCard data={featuredCreditUnion} tw="hidden md:block col-span-1 md:col-start-2 md:col-end-3 md:ml-7 lg:ml-9" />
       </MajorSection>
-      <HomeSection tw=" mx-4 md:mx-8 lg:mx-20 xl:mx-28 md:my-12 lg:my-16" title="More Stories">
+      <HomeSection tw="mt-8 mx-4 md:mx-8 lg:mx-20 xl:mx-28 md:my-12 lg:my-16" title="More Stories">
             <BlogPostCardList postDataList={learnPosts} />
       </HomeSection>
     </Layout>
