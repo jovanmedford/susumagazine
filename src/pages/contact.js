@@ -7,7 +7,7 @@ import tw from "twin.macro"
 
 const TextInput = tw("input")`
   block w-full bg-bg-color rounded-sm py-2 pl-2 
-  border-2 border-primary-700 border-solid
+  border border-primary-700 border-solid
 `
 const TextArea = tw("textarea")`
   block w-full bg-bg-color rounded-sm h-28 p-2
