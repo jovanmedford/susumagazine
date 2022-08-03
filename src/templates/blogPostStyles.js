@@ -68,9 +68,8 @@ const blogPostStyles = css`
   }
 
   blockquote {
-    ${tw`ml-4 border-primary-500`}
-    border-left: 2px solid;
-    padding: 1rem 0 0.5rem 1rem;
+    ${tw`rounded-lg my-4`}
+    padding: 1rem 1rem 0.5rem 1rem;
     background: #eeebf5;
   }
 `
