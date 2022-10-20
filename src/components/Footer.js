@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
       </ListWrapper>
       <span tw="mt-2 md:mt-4 block text-primary-100 text-center">
-        SUSU Magazine 2021 <FontAwesomeIcon icon={faCopyright} />
+        SUSU Magazine 2022 <FontAwesomeIcon icon={faCopyright} />
       </span>
     </footer>
   )

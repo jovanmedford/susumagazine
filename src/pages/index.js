@@ -5,6 +5,7 @@ import Seo from "../components/seo"
 import Layout from "../components/Layout"
 import tw, { styled } from "twin.macro"
 import HeroImage from "../components/HeroImage"
+import HeroImage2022 from "../components/HeroImage2022"
 import BlogPostCardList from "../components/BlogPostCardList"
 import HomeSection from "../components/HomeSection"
 import FeaturedCard from "../components/card/FeaturedCard"
@@ -20,7 +21,7 @@ const IndexPage = ({ data }) => {
   const learnPosts = data.learn.nodes
   const creditUnionNewsPosts = data.creditUnionNews.nodes
   const featuredMain = data.featuredMain.nodes[0]
-  const featuredCreditUnion= data.featuredCreditUnion.nodes[0]
+  const featuredCreditUnion = data.featuredCreditUnion.nodes[0]
   const featuredSecondary = data.featuredSecondary.nodes
   const sidePosts = data.side.nodes
   const institutions = data.institutions.nodes
@@ -29,16 +30,27 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
       <MajorSection>
-          <FeaturedCard data={featuredMain} tw="col-span-1 md:col-start-1 md:col-end-2 md:mr-7 lg:mr-9" />
-          <HomeSection hasFullHeight tw="col-span-1 md:col-start-2 md:col-end-3">
-             <BlogPostCardList postDataList={sidePosts} type="list"/>
-          </HomeSection>
+        <div tw="h-32 bg-accent-300 col-span-2 relative mt-6 mb-4 flex justify-center items-center">
+          <p tw="text-lg font-bold hidden lg:block">
+            SUSU 2022 is here! Click the cover to get started
+          </p>
+          <HeroImage2022 />
+        </div>
+      </MajorSection>
+      <MajorSection>
+        <FeaturedCard
+          data={featuredMain}
+          tw="col-span-1 md:col-start-1 md:col-end-2 md:mr-7 lg:mr-9"
+        />
+        <HomeSection hasFullHeight tw="col-span-1 md:col-start-2 md:col-end-3">
+          <BlogPostCardList postDataList={sidePosts} type="list" />
+        </HomeSection>
       </MajorSection>
       <Body>
         <MainContent>
           <Heading>Featured</Heading>
           <HomeSection>
-             <BlogPostCardList postDataList={featuredSecondary} />
+            <BlogPostCardList postDataList={featuredSecondary} />
           </HomeSection>
           <div tw="h-40 mt-10 bg-accent-300">
             <HeroImage />
@@ -76,19 +88,25 @@ const IndexPage = ({ data }) => {
               Suggested Topics
             </h2>
           </div>
-        <BubbleLinkList tw="mt-2" links={links} />
+          <BubbleLinkList tw="mt-2" links={links} />
         </SideContent>
       </Body>
-      {institutions ? <InstitutionSection institutions={institutions} /> : null }
+      {institutions ? <InstitutionSection institutions={institutions} /> : null}
       <MajorSection tw="md:mt-12 lg:mt-20">
-          <Heading>Credit Union News</Heading>
-          <HomeSection hasFullHeight tw="col-span-1 md:col-start-1 md:col-end-2">
-             <BlogPostCardList postDataList={creditUnionNewsPosts} type="list"/>
-          </HomeSection>
-          <FeaturedCard data={featuredCreditUnion} tw="hidden md:block col-span-1 md:col-start-2 md:col-end-3 md:ml-7 lg:ml-9" />
+        <Heading>Credit Union News</Heading>
+        <HomeSection hasFullHeight tw="col-span-1 md:col-start-1 md:col-end-2">
+          <BlogPostCardList postDataList={creditUnionNewsPosts} type="list" />
+        </HomeSection>
+        <FeaturedCard
+          data={featuredCreditUnion}
+          tw="hidden md:block col-span-1 md:col-start-2 md:col-end-3 md:ml-7 lg:ml-9"
+        />
       </MajorSection>
-      <HomeSection tw="mt-8 mx-4 md:mx-8 lg:mx-20 xl:mx-28 md:my-12 lg:my-16" title="More Stories">
-            <BlogPostCardList postDataList={learnPosts} />
+      <HomeSection
+        tw="mt-8 mx-4 md:mx-8 lg:mx-20 xl:mx-28 md:my-12 lg:my-16"
+        title="More Stories"
+      >
+        <BlogPostCardList postDataList={learnPosts} />
       </HomeSection>
     </Layout>
   )
@@ -156,14 +174,16 @@ export const query = graphql`
     side: allWpPost(limit: 4, filter: { section: { name: { eq: "side" } } }) {
       ...PreviewInformation
     }
-    institutions: allWpUser(filter: {custom: {isinstitution: {eq: true}}}) {
+    institutions: allWpUser(
+      filter: { custom: { isinstitution: { eq: true } } }
+    ) {
       nodes {
         firstName
         avatar {
           url
         }
       }
-    }  
+    }
   }
 
   fragment PreviewInformation on WpPostConnection {
