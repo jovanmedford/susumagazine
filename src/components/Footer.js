@@ -1,12 +1,12 @@
-import React from "react"
-import tw from "twin.macro"
-import FooterLinkList from "./FooterLinkList"
-import { faCopyright } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faFacebookSquare,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons"
+import { faCopyright } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React from "react"
+import tw from "twin.macro"
+import FooterLinkList from "./FooterLinkList"
 
 const ListWrapper = tw(`div`)`
   flex flex-wrap
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
       </ListWrapper>
       <span tw="mt-2 md:mt-4 block text-primary-100 text-center">
-        SUSU Magazine 2022 <FontAwesomeIcon icon={faCopyright} />
+        SUSU Magazine 2023 <FontAwesomeIcon icon={faCopyright} />
       </span>
     </footer>
   )

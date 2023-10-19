@@ -1,21 +1,20 @@
-import * as React from "react"
 import "@fontsource/lora"
 import "@fontsource/lora/700.css"
-import Seo from "../components/seo"
-import Layout from "../components/Layout"
-import tw, { styled } from "twin.macro"
-import HeroImage from "../components/HeroImage"
-import HeroImage2022 from "../components/HeroImage2022"
-import BlogPostCardList from "../components/BlogPostCardList"
-import HomeSection from "../components/HomeSection"
-import FeaturedCard from "../components/card/FeaturedCard"
-import BubbleLinkList from "../components/BubbleLinkList"
-import MajorSection from "../components/sections/MajorSection"
-import InstitutionSection from "../components/sections/InstitutionSection"
-import Heading from "../components/sections/Heading"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import GoogleAd from "../components/adsense/GoogleAd"
+import * as React from "react"
+import tw, { styled } from "twin.macro"
+import BlogPostCardList from "../components/BlogPostCardList"
+import BubbleLinkList from "../components/BubbleLinkList"
+import HeroCover from "../components/HeroCover"
+import HeroImage from "../components/HeroImage"
+import HomeSection from "../components/HomeSection"
+import Layout from "../components/Layout"
+import FeaturedCard from "../components/card/FeaturedCard"
+import Heading from "../components/sections/Heading"
+import InstitutionSection from "../components/sections/InstitutionSection"
+import MajorSection from "../components/sections/MajorSection"
+import Seo from "../components/seo"
 
 const IndexPage = ({ data }) => {
   const learnPosts = data.learn.nodes
@@ -31,10 +30,8 @@ const IndexPage = ({ data }) => {
       <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
       <MajorSection>
         <div tw="h-32 bg-accent-300 col-span-2 relative mt-6 mb-4 flex justify-center items-center">
-          <p tw="text-lg font-bold hidden lg:block">
-            SUSU 2022 is here! Click the cover to get started
-          </p>
-          <HeroImage2022 />
+          <p tw="text-lg font-bold hidden lg:block">Click to read SUSU 2023!</p>
+          <HeroCover />
         </div>
       </MajorSection>
       <MajorSection>
