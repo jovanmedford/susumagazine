@@ -1,9 +1,9 @@
-import * as React from "react"
-import Layout from "../components/Layout"
-import PageHeading from "../components/PageHeading"
 import { graphql } from "gatsby"
-import Magazine from "../components/Magazine"
+import * as React from "react"
 import tw, { styled } from "twin.macro"
+import Layout from "../components/Layout"
+import Magazine from "../components/Magazine"
+import PageHeading from "../components/PageHeading"
 
 const MagazineGrid = styled("ul")`
   ${tw`w-8/12 md:w-7/12 mx-auto mt-10 mb-16 block`}
@@ -44,7 +44,7 @@ const MagazineLibrary = ({ data }) => {
     <Layout>
       <PageHeading>Magazine Library</PageHeading>
       <p tw="mt-4 md:mt-8 text-center md:text-md">
-        View any SUSU Magazine edition from the past 6 years.
+        View all SUSU Magazine editions.
       </p>
       <MagazineGrid>{Magazines}</MagazineGrid>
     </Layout>
