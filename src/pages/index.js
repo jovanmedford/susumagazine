@@ -29,10 +29,12 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
       <MajorSection>
-        <div tw="h-32 bg-accent-300 col-span-2 relative mt-6 mb-4 flex justify-center items-center">
-          <p tw="text-lg font-bold hidden lg:block">Click to read SUSU 2023!</p>
+      <a tw="static col-span-2 transition ease-in-out bg-primary-100 hover:bg-primary-300 mt-6 mb-4 block"  href="https://online.fliphtml5.com/bkdcf/calo/#p=1">
+        <div tw="h-32 flex justify-center items-center">
+          <p tw="text-lg font-bold hidden lg:block">10th Anniversary Edition - Out Now!</p>
           <HeroCover />
         </div>
+        </a>
       </MajorSection>
       <MajorSection>
         <FeaturedCard
@@ -49,7 +51,7 @@ const IndexPage = ({ data }) => {
           <HomeSection>
             <BlogPostCardList postDataList={featuredSecondary} />
           </HomeSection>
-          <div tw="h-40 mt-10 bg-accent-300">
+          <div tw="h-40 mt-10 transition ease-in-out bg-primary-100 hover:bg-primary-300 ">
             <HeroImage />
           </div>
         </MainContent>

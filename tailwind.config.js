@@ -12,12 +12,13 @@ module.exports = {
       "bg-color": "#F9F8F3",
       primary: {
         100: "#ece6f9",
-        300: "#0F325A",
+        300: "#B0A4EA",
         500: "#7762DA",
         700: "#3D27A5",
         900: "#201457",
       },
       secondary: {
+        50:  "#EBEFE8",
         100: "#DFF7C0",
         300: "#A2E845",
         500: "#6EB116",

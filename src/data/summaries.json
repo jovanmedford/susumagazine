@@ -1,0 +1,47 @@
+[
+  {
+    "id":"jaydee",
+    "author": {
+      "img": "jaydee.png",
+      "tagline": "Jaydee Bourne, Attorney-at-Law Msc Corporate & Commercial Law"
+    },
+    "heading": "Understand why credit unions merge",
+    "description": "Attorney-at-law Jaydee Bourne explains the strategic reasons behind credit union mergers, offering a clear understanding of how combining resources can benefit members and communities."
+  },
+  {
+    "id":"dwayne",
+    "author": {
+      "img": "dwayne.png",
+      "tagline": "Dwayne Devonish, Professor of Management and Organis. Behaviour, UWI"
+    },
+    "heading": "How IMF Interventions Are Impacting Credit Unions",
+    "description": "Professor Dwayne Devonish provides a detailed look at how recent IMF involvement in Barbados may influence local credit unions, offering strategies to adapt to potential challenges."
+  },
+  {
+    "id":"tamika",
+    "author": {
+      "img": "tamika.png",
+      "tagline": "Tamika Burton, BSc in Economics and Accounting"
+    },
+    "heading": "Achieving Balance in a Post-Pandemic World",
+    "description": "Tamika Burton, BSc in Economics and Accounting, explores strategies for maintaining a healthy work-life balance in response to the workforce changes due to COVID-19."
+  },
+  {
+    "id":"antonio",
+    "author": {
+      "img": "antonio.png",
+      "tagline": "Antonio Arthur, MIS Manager, BWUCCU Msc Business Admin. Finance"
+    },
+    "heading": "Explore The Role of AI in the Future of Credit Unions",
+    "description": "Antonio Arthur, MIS Manager, explores how artificial intelligence is set to transform credit unions, from improving customer service to optimizing internal operations."
+  },
+  {
+    "id":"fsc",
+    "author": {
+      "img": "fsc.png",
+      "tagline": "Financial Services Commision"
+    },
+    "heading": "Defining Capital and Why It Matters to Your Credit Union",
+    "description": "The Financial Services Commission breaks down the concept of capital and its critical role in maintaining your credit union’s stability and growth, helping you better understand how strong capital can safeguard your institution."
+  }
+]

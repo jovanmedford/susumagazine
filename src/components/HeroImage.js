@@ -7,7 +7,7 @@ export default function HeroImage() {
       <StaticImage
         tw="w-32 m-auto relative -top-2 -left-3 md:left-5  
           md:m-0 shadow-xl md:shadow-2xl hover:cursor-pointer"
-        src="../images/susumagazine-2023.jpg"
+        src="../images/susumagazine-2024-v3.jpg"
         alt="2023 Magazine"
         aspectRatio={0.717}
         layout="fullWidth"
