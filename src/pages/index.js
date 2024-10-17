@@ -1,6 +1,7 @@
 import "@fontsource/lora"
 import "@fontsource/lora/700.css"
 import { graphql } from "gatsby"
+import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import * as React from "react"
 import tw, { styled } from "twin.macro"
@@ -29,12 +30,12 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
       <MajorSection>
-      <a tw="static col-span-2 transition ease-in-out bg-primary-100 hover:bg-primary-300 mt-6 mb-4 block"  href="https://online.fliphtml5.com/bkdcf/calo/#p=1">
+      <Link tw="static col-span-2 transition ease-in-out bg-primary-100 hover:bg-primary-300 mt-6 mb-4 block"  to="susumagazine-2024">
         <div tw="h-32 flex justify-center items-center">
           <p tw="text-lg font-bold hidden lg:block">10th Anniversary Edition - Out Now!</p>
           <HeroCover />
         </div>
-        </a>
+        </Link>
       </MajorSection>
       <MajorSection>
         <FeaturedCard
