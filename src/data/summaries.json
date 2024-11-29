@@ -1,6 +1,6 @@
 [
   {
-    "id":"jaydee",
+    "id": "jaydee",
     "author": {
       "img": "jaydee.png",
       "tagline": "Jaydee Bourne, Attorney-at-Law Msc Corporate & Commercial Law"
@@ -9,7 +9,7 @@
     "description": "Attorney-at-law Jaydee Bourne explains the strategic reasons behind credit union mergers, offering a clear understanding of how combining resources can benefit members and communities."
   },
   {
-    "id":"dwayne",
+    "id": "dwayne",
     "author": {
       "img": "dwayne.png",
       "tagline": "Dwayne Devonish, Professor of Management and Organis. Behaviour, UWI"
@@ -18,7 +18,7 @@
     "description": "Professor Dwayne Devonish provides a detailed look at how recent IMF involvement in Barbados may influence local credit unions, offering strategies to adapt to potential challenges."
   },
   {
-    "id":"tamika",
+    "id": "tamika",
     "author": {
       "img": "tamika.png",
       "tagline": "Tamika Burton, BSc in Economics and Accounting"
@@ -27,16 +27,16 @@
     "description": "Tamika Burton, BSc in Economics and Accounting, explores strategies for maintaining a healthy work-life balance in response to the workforce changes due to COVID-19."
   },
   {
-    "id":"antonio",
+    "id": "antonio",
     "author": {
       "img": "antonio.png",
-      "tagline": "Antonio Arthur, MIS Manager, BWUCCU Msc Business Admin. Finance"
+      "tagline": "Antonio Arthur, CITO, Affinity Plus Credit Union Ltd. Msc Business Admin, Finance"
     },
     "heading": "Explore The Role of AI in the Future of Credit Unions",
-    "description": "Antonio Arthur, MIS Manager, explores how artificial intelligence is set to transform credit unions, from improving customer service to optimizing internal operations."
+    "description": "Antonio Arthur, explores how artificial intelligence is set to transform credit unions, from improving customer service to optimizing internal operations."
   },
   {
-    "id":"fsc",
+    "id": "fsc",
     "author": {
       "img": "fsc.png",
       "tagline": "Financial Services Commision"
