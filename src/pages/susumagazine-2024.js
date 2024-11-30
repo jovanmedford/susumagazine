@@ -110,7 +110,7 @@ const SusuMagazineTwentyFour = () => {
               </p>
               <div tw="flex mt-4">
                 <MagazineLink href="https://online.fliphtml5.com/bkdcf/vosk/#p=1" tw="mr-2">Read Online</MagazineLink>
-                <DownlaodLink href="https://drive.google.com/uc?export=download&id=1aACG6VC8v4Uwnb1QUBvIye9DVWpB6Wko">Download PDF</DownlaodLink>
+                <DownlaodLink href="https://drive.google.com/uc?export=download&id=1m1Mmgmz51tujBWEhE3MsosWuWZ0ZPMh-">Download PDF</DownlaodLink>
               </div>
             </div>
           </div>
