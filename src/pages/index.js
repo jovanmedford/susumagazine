@@ -30,21 +30,15 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="SUSU Magazine | Credit Union News and Personal Finance Blog" />
       <MajorSection>
-      <Link tw="static col-span-2 transition ease-in-out bg-primary-100 hover:bg-primary-300 mt-6 mb-4 block"  to="susumagazine-2024">
-        <div tw="h-32 flex justify-center items-center">
-          <p tw="text-lg font-bold hidden lg:block">10th Anniversary Edition - Out Now!</p>
-          <HeroCover />
-        </div>
-        </Link>
-      </MajorSection>
-      <MajorSection>
-        <FeaturedCard
-          data={featuredMain}
-          tw="col-span-1 md:col-start-1 md:col-end-2 md:mr-7 lg:mr-9"
-        />
-        <HomeSection hasFullHeight tw="col-span-1 md:col-start-2 md:col-end-3">
-          <BlogPostCardList postDataList={sidePosts} type="list" />
-        </HomeSection>
+        <a
+          tw="static col-span-2 transition ease-in-out bg-primary-100 hover:bg-primary-300 mt-6 mb-4 block"
+          href="https://online.fliphtml5.com/bkdcf/ygwe/#p=1"
+        >
+          <div tw="h-32 flex justify-center items-center">
+            <p tw="text-lg font-bold hidden lg:block">Read Susu 2025</p>
+            <HeroCover />
+          </div>
+        </a>
       </MajorSection>
       <Body>
         <MainContent>
